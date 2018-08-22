@@ -76,7 +76,9 @@ The Provider should wrap App component in `index.js`
   * Provide an edit button to toggle editing state
 
 #### Test
+
 * Test each reducer and action
+* BONUS: test components
 
 ####  Documentation  
 
