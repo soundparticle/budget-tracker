@@ -1,19 +1,18 @@
 Budget Tracker - Lab 1 "Categories"
 ===
 
-## Configuration  
-
-Your lab must include the normal setup and config items
+Budget tracking app with budget categories and expenses (today just categories)
  
 ## Category 
 
 In this app a category should contain at least the following properties:
 
-* `id` a uuid
-* `timestamp` a date from when the category was created
+* `id` a uuid (`shortid` or other npm)
+* `timestamp` a date from when the category was created (`new Date()`)
 * `name` a string that is the name of the category
 * `budget` a number that is the total amount of $ in the category 
-* feel free to add more to your categories if you want
+
+Create a few dummy categories so your app initializes with some data.
 
 ### Redux
 
@@ -21,10 +20,10 @@ In this app a category should contain at least the following properties:
 
 This reducer should support the following interactions 
 
-* `CATEGORIES_LOAD`
+* `CATEGORY_LOAD`
 * `CATEGORY_ADD`
 * `CATEGORY_REMOVE`
-* STRETCH: `CATEGORIES_UPDATE`
+* BONUS: `CATEGORY_UPDATE`
 
 #### action creators
 
@@ -44,7 +43,10 @@ Provider
     Dashboard
       CategoryForm -- for creating categorys
       Categories -- list of categories
-        Category Item -- display of category
+        Category
+          CategoryItem -- display of category
+          BONUS: CategoryForm -- edit a category
+        
 ```
 
 #### Provider/App 
@@ -55,24 +57,23 @@ The Provider should wrap App component in `index.js`
 
 * should use react-redux's `connect` to map state and dispatchable methods to props
 * should display a `CategoryForm` for adding categories to the app state
-* should display a `Catgories` component that displays `CategoryItem` for each category in the app state
+* should display a `Catgories` component that displays `Category` for each category in the app state
+* should display a `Catgory` component that displays `CategoryItem` for each category in the app state
+* BONUS: `Category` switches to editable `CategoryForm`
 
 #### CategoryForm Component
 
-Only need to handle add for today!
-
 * should expect an `onComplete` prop to be a function
   * that function should be invoked with the CategoryForm state when the form is submited
-* should expect a `buttonText` prop to be configure the submit buttons text
-* should support and optional `category` prop that will initialize the state of the form
+* BONUS: offer an edit more if `category` prop is passed
 
 #### CategoryItem Component
 * should display the category's name and budget
 * should display a delete button
   * `onClick` the category should be removed from the application state
-* ~~should display a CategoryForm  ~~
-  * ~~`onComplete` the form should update the component in the application state~~
-* STRETCH: Provide an edit button to toggle editing state
+* BONUS: should display a CategoryForm
+  * `onComplete` the form should update the component in the application state
+  * Provide an edit button to toggle editing state
 
 #### Test
 * Test each reducer and action
@@ -80,3 +81,11 @@ Only need to handle add for today!
 ####  Documentation  
 
 Write a description of the project in your README.md
+
+## Rubric
+
+* Tested reducer(s) **3pts**
+* Tested actions **1pts**
+* Init store and Provider **1pt**
+* Use of `connect` **2pts**
+* React Components **3pts**
