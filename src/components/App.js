@@ -21,7 +21,7 @@ class App extends Component {
               <Route exact path="/" component={Home}/>
               {/* <Route exact path="/demo" component={Demo}/> */}
               <Route exact path="/animals" component={Dashboard}/>
-              {/* <Redirect to="/demo/>"/> */}
+              <Redirect to="/>"/>
             </Switch>
           </main>
         </div>
