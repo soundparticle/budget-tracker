@@ -1,5 +1,5 @@
-import { load, add, remove } from './actions';
-import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE } from './reducers';
+import { load, add, remove, update } from './actions';
+import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE, CATEGORY_UPDATE } from './reducers';
 
 describe('category actions', () => {
 
@@ -15,6 +15,16 @@ describe('category actions', () => {
 
     expect(action).toEqual({
       type: CATEGORY_ADD,
+      payload: category
+    });
+  });
+
+  it('updates', () => {
+    const category = {};
+    const action = update(category);
+
+    expect(action).toEqual({
+      type: CATEGORY_UPDATE,
       payload: category
     });
   });
