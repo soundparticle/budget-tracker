@@ -57,14 +57,14 @@ The Provider should wrap App component in `index.js`
 
 * should use react-redux's `connect` to map state and dispatchable methods to props
 * should display a `CategoryForm` for adding categories to the app state
-* should display a `Catgories` component that displays `Category` for each category in the app state
-* should display a `Catgory` component that displays `CategoryItem` for each category in the app state
+* should display a `Categories` component that displays `Category` for each category in the app state
+* should display a `Category` component that displays `CategoryItem` for each category in the app state
 * BONUS: `Category` switches to editable `CategoryForm`
 
 #### CategoryForm Component
 
 * should expect an `onComplete` prop to be a function
-  * that function should be invoked with the CategoryForm state when the form is submited
+  * that function should be invoked with the CategoryForm state when the form is submitted
 * BONUS: offer an edit more if `category` prop is passed
 
 #### CategoryItem Component

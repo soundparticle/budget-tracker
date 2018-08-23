@@ -28,7 +28,7 @@ exports[`Category form renders add if no category prop 1`] = `
     <InputControl
       name="budget"
       onChange={[Function]}
-      value=""
+      value={null}
     >
       <p>
         <label>
@@ -38,7 +38,7 @@ exports[`Category form renders add if no category prop 1`] = `
             name="budget"
             onChange={[Function]}
             required={true}
-            value=""
+            value={null}
           />
         </label>
       </p>
@@ -190,160 +190,6 @@ exports[`Category form renders add if no category prop 3`] = `
         type="submit"
       >
         Add
-      </button>
-    </p>
-  </form>
-</CategoryForm>
-`;
-
-exports[`Category form renders edit if there is an category prop 1`] = `
-<CategoryForm
-  category={
-    Object {
-      "budget": "400",
-      "key": "abc",
-      "name": "shopping",
-    }
-  }
-  onCancel={[MockFunction]}
-  onComplete={[MockFunction]}
->
-  <form
-    onSubmit={[Function]}
-  >
-    <InputControl
-      name="name"
-      onChange={[Function]}
-      value="shopping"
-    >
-      <p>
-        <label>
-          name
-          :
-          <input
-            name="name"
-            onChange={[Function]}
-            required={true}
-            value="shopping"
-          />
-        </label>
-      </p>
-    </InputControl>
-    <InputControl
-      name="budget"
-      onChange={[Function]}
-      value="400"
-    >
-      <p>
-        <label>
-          budget
-          :
-          <input
-            name="budget"
-            onChange={[Function]}
-            required={true}
-            value="400"
-          />
-        </label>
-      </p>
-    </InputControl>
-    <p>
-      <button
-        type="submit"
-      >
-        Update
-      </button>
-      <button
-        onClick={[MockFunction]}
-        type="button"
-      >
-        Cancel
-      </button>
-    </p>
-  </form>
-</CategoryForm>
-`;
-
-exports[`Category form renders edit if there is an category prop 2`] = `
-<CategoryForm
-  category={
-    Object {
-      "budget": "400",
-      "key": "abc",
-      "name": "shopping",
-    }
-  }
-  onCancel={[MockFunction]}
-  onComplete={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "budget": "400",
-            "key": "abc",
-            "name": "shopping",
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "isThrow": false,
-          "value": Promise {},
-        },
-      ],
-    }
-  }
->
-  <form
-    onSubmit={[Function]}
-  >
-    <InputControl
-      name="name"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          name
-          :
-          <input
-            name="name"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
-    <InputControl
-      name="budget"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          budget
-          :
-          <input
-            name="budget"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
-    <p>
-      <button
-        type="submit"
-      >
-        Update
-      </button>
-      <button
-        onClick={[MockFunction]}
-        type="button"
-      >
-        Cancel
       </button>
     </p>
   </form>

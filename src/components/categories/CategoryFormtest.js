@@ -47,42 +47,5 @@ describe('Category form', () => {
       });
   });
 
-  it('renders edit if there is an category prop', () => {
-    const handleComplete = jest.fn();
-    const promise = Promise.resolve();
-    handleComplete.mockReturnValueOnce(promise);
-    const handleCancel = jest.fn();
 
-    const category = { key: 'abc', name: 'shopping', budget: '400' };
-    
-    const wrapper = mount(<CategoryForm
-      onComplete={handleComplete}
-      onCancel={handleCancel}
-      category={category}
-    />);
-
-    expect(toJSON(wrapper)).toMatchSnapshot();
-    
-    wrapper.find('input[name="budget"]').simulate('change', {
-      target: {
-        name: 'budget',
-        value: '400'
-      }
-    });
-
-    wrapper.find('button[type="submit"]').simulate('submit');
-
-    const calls = handleComplete.mock.calls;
-    expect(calls.length).toBe(1); // only called once
-    expect(calls[0][0]).toEqual({
-      ...category,
-      budget: '400'
-    });
-
-    return promise
-      .then(() => {
-        wrapper.update();
-        expect(toJSON(wrapper)).toMatchSnapshot();
-      });
-  });
 });
