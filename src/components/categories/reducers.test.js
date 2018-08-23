@@ -36,4 +36,25 @@ describe('categories reducers', () => {
 
     expect(state).toEqual([category1, category2, category3]);
   });
+
+  it('update category', () => {
+    const category1 = { key: '1', name: 'a' };
+    const category2 = { key: '2', name: 'b' };
+    const category3 = { key: '3', name: 'c' };
+
+    const updated = { key: '2', name: 'f' };
+
+    const state = categories([category1, category2, category3], {
+      type: CATEGORY_UPDATE,
+      payload: updated
+    });
+
+    expect(state).toEqual([
+      category1,
+      updated,
+      category3
+    ]);
+  });
+
+  
 });
