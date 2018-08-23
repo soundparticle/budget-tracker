@@ -13,5 +13,14 @@ describe('categories reducers', () => {
     expect(state).toEqual([]);
   });
 
-  
+  it('loads categories', () => {
+    const payload = [{}, {}, {}];
+
+    const state = categories([], {
+      type: CATEGORY_LOAD,
+      payload
+    });
+
+    expect(state).toBe(payload);
+  });
 });
