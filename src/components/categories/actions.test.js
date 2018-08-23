@@ -13,8 +13,17 @@ describe('CRUD category actions', () => {
 
   it('add', () => {
     const payload = {};
-    const action
-    expect()
-  })
+    const action = add(payload);
+    expect(action).toEqual({ type: CATEGORY_ADD, payload: payload });
+  });
 
+  it('updates', () => {
+    const action = update(4);
+    expect(action).toEqual({ type: CATEGORY_UPDATE, payload: 4 });
+  });
+
+  it('removes', () => {
+    const action = remove('79');
+    expect(action).toEqual({ type: CATEGORY_REMOVE, payload: '79' });
+  });
 });
