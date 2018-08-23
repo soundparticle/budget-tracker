@@ -56,5 +56,19 @@ describe('categories reducers', () => {
     ]);
   });
 
-  
+  it('remove category', () => {
+    const category1 = { key: '1', name: 'a' };
+    const category2 = { key: '2', name: 'b' };
+    const category3 = { key: '3', name: 'c' };
+    
+    const state = categories([category1, category2, category3], {
+      type: CATEGORY_REMOVE,
+      payload: '2'
+    });
+
+    expect(state).toEqual([
+      category1,
+      category3
+    ]);
+  });
 });
