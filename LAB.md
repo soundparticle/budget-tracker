@@ -41,7 +41,7 @@ Create the following components and structure them according to the following di
 Provider
   App
     Dashboard
-      CategoryForm -- for creating categorys
+      CategoryForm -- for creating categories
       Categories -- list of categories
         Category
           CategoryItem -- display of category
