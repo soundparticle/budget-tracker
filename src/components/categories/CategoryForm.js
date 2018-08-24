@@ -7,11 +7,6 @@ class CategoryForm extends Component {
     key: null,
     name: '',
     budget: 0,
-    expenses: {
-      key: null,
-      name: '',
-      price: 0,
-    },
     timestamp: new Date()
   };
 
