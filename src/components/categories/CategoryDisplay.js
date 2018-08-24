@@ -7,15 +7,18 @@ class CategoryDisplay extends Component {
 
   static propTypes = {
     category: PropTypes.object.isRequired,
+    onEdit: PropTypes.func.isRequired,
     remove: PropTypes.func.isRequired
-  }
+  };
+  
   render() { 
-    const { category, remove } = this.props;
+    const { category, onEdit, remove } = this.props;
 
     return (
       <div>
         <h3>{category.name}</h3>
         <p>{category.budget}</p>
+        <button name="edit" onClick={onEdit}>✎</button>
         <button name="delete" onClick={() => remove(category.key)}>🗑</button>
       </div>
     );

@@ -1,25 +1,49 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import CategoryForm from './categories/CategoryForm';
+import Categories from './categories/Categories';
+import { load, add, update } from '../components/categories/actions';
 
 class Dashboard extends Component {
 
-  //add propTypes
+  static propTypes = {
+    categories: PropTypes.array,
+    load: PropTypes.func.isRequired,
+    add: PropTypes.func.isRequired
 
-  //componentDidMount(){
+  };
 
-  // }
+  componentDidMount(){
+    this.props.load();
+  }
   render() { 
+    const { categories, add } = this.props;
+
     return (
       <div>
         <section>
           <h3>Add a category</h3>
-          <CategoryForm/>
+          <CategoryForm onComplete={add}/>
         </section>
+
+        {categories &&  
+          <section>
+            <h3>Categories</h3>
+            <Categories
+              categories={categories}
+              onUpdate={update}
+            />
+          </section>
+        }
       </div>
     );
   }
 }
  
-export default Dashboard;
+export default connect(
+  state => ({
+    categories: state
+  }),
+  { load, add }
+)(Dashboard);
