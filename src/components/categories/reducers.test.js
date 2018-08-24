@@ -81,25 +81,27 @@ describe('categories reducers', () => {
 
 // expenses reducers
 
-describe('expenses by category reducers', () => {
+describe.only('expenses by category reducers', () => {
 
-  it.only('initialize to empty array', () => {
+  it('initialize to empty array', () => {
     const state = expenses(undefined, {});
     expect(state).toEqual([]);
-    // console.log('*** state', state);
+  });
+  
+  // console.log('*** state', state);
+
+  it('adds an expense', () => {
+    const expense1 = { name: '1' };
+    const expense2 = { name: '2' };
+    const expense3 = { name: '3' };
+
+    const state = expenses([expense1, expense2], {
+      type: EXPENSE_ADD,
+      payload: expense3
+    });
+
+    expect(state).toEqual([expense1, expense2, expense3]);
   });
 
 
-  // it('adds an expense', () => {
-  //   const expense1 = { name: '1' };
-  //   const expense2 = { name: '2' };
-  //   const expense3 = { name: '3' };
-
-  //   const state = expenses([expense1, expense2], {
-  //     type: EXPENSE_ADD,
-  //     payload: expense3
-  //   });
-
-  //   expect(state).toEqual([expense1, expense2, expense3]);
-  // });
 });

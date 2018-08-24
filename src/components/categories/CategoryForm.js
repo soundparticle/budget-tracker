@@ -7,7 +7,6 @@ class CategoryForm extends Component {
     key: null,
     name: '',
     budget: 0,
-    timestamp: new Date()
   };
 
   static propTypes = {
