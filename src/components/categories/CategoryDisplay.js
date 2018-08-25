@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { remove } from './actions';
+import { remove } from '../../redux/actions';
 
 class CategoryDisplay extends Component {
 
@@ -10,7 +10,7 @@ class CategoryDisplay extends Component {
     onEdit: PropTypes.func.isRequired,
     remove: PropTypes.func.isRequired
   };
-  
+
   render() { 
     const { category, onEdit, remove } = this.props;
 
@@ -18,6 +18,7 @@ class CategoryDisplay extends Component {
       <div>
         <h3>{category.name}</h3>
         <p>{category.budget}</p>
+        <p>{category.timestamp}</p>
         <button name="edit" onClick={onEdit}>✎</button>
         <button name="delete" onClick={() => remove(category.key)}>🗑</button>
       </div>

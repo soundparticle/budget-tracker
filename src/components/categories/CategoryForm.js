@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 class CategoryForm extends Component {
   state = { 
     key: null,
-    timestamp: null,
     name: '',
-    budget: 0
+    budget: 0,
+    expenses: [],
+    category: null
   };
 
   static propTypes = {
@@ -29,7 +30,7 @@ class CategoryForm extends Component {
     if(key) category.key = key;
 
     this.props.onComplete(category);
-    this.setState({ name: '', budget: 0, timestamp: null });
+    this.setState({ name: '', budget: 0 });
   };
 
   handleChange = ({ target }) => {
