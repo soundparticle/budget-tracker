@@ -136,4 +136,11 @@ describe('expenses by category reducers', () => {
     });
     expect(state).toEqual({ 10: [expense1, expense2] });
   });
+
+  it('updats an expense', () => {
+    const state = expensesByCategory(
+      { 10: [{ id: 100, name: 'cd', price: 20 }] },
+      { type: EXPENSE_UPDATE, payload: { categoryId: 10, id: 100, name: 'cd', price: 90 } });
+    expect(state).toEqual({ 10: [{ categoryId: 10, id: 100, name: 'cd', price: 90 }] });
+  });
 });
