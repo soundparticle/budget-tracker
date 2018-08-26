@@ -90,8 +90,8 @@ describe('expenses by category reducers', () => {
   };
 
   const expense2 = {
-    id: 200,
-    categoryId: 20,
+    id: 10,
+    categoryId: 10,
     name: 'fuzz',
     price: 90
   };

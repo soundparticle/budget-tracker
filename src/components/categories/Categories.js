@@ -15,7 +15,7 @@ class Categories extends Component {
       <ul>
         {categories.map(category => (
           <Category
-            id={category.id}
+            key={category.id}
             category={category}
           />
         ))}
