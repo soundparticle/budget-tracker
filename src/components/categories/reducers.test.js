@@ -5,10 +5,9 @@ import {
   CATEGORY_UPDATE,
   CATEGORY_REMOVE,
   expensesByCategory,
-  EXPENSE_LOAD,
   EXPENSE_ADD,
   EXPENSE_UPDATE,
-  EXPENSE_REMOVE
+  EXPENSE_DELETE
 } from './reducers';
 
 // categories reducers
@@ -87,40 +86,25 @@ describe('expenses by category reducers', () => {
     id: 100,
     categoryId: 10,
     name: 'dvd',
-    price: '30'
+    price: 30
   };
 
   const expense2 = {
     id: 200,
     categoryId: 20,
     name: 'fuzz',
-    price: '90'
+    price: 90
   };
 
-  it('initialize to empty array', () => {
+  it('initialize to empty object', () => {
     const state = expensesByCategory(undefined, {});
     expect(state).toEqual({});
   });
 
   it('adds an expense sub-category to category', () => {
-    const state = expensesByCategory({}, { type: CATEGORY_ADD, payload: { id: 100 } });
-    expect(state).toEqual({ 100: [] });
+    const state = expensesByCategory({}, { type: CATEGORY_ADD, payload: { id: 10 } });
+    console.log('*** state', state);
+    expect(state).toEqual({ 10: [] });
   });
   
-  // console.log('*** state', state);
-
-  // it('adds an expense to a category', () => {
-  //   const expense1 = { name: '1' };
-  //   const expense2 = { name: '2' };
-  //   const expense3 = { name: '3' };
-
-  //   const state = expensesByCategory([expense1, expense2], {
-  //     type: EXPENSE_ADD,
-  //     payload: expense3
-  //   });
-
-  //   expect(state).toEqual([expense1, expense2, expense3]);
-  // });
-
-
 });
