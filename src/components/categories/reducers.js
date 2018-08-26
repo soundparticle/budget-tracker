@@ -46,11 +46,15 @@ export function expensesByCategory(state = {}, { type, payload }) {
       delete copy[payload.id];
       return copy;
     }
-    case EXPENSE_ADD:
+    case EXPENSE_ADD: {
       return {
         ...state,
-        [payload.id]: [],
+        [payload.categoryId]: [
+          ...state[payload.categoryId],
+          payload
+        ]
       };
+    }
     case EXPENSE_UPDATE:
       return state.map(expense => expense.id === payload.id ? payload : expense);
     case EXPENSE_DELETE:

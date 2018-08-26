@@ -125,4 +125,15 @@ describe('expenses by category reducers', () => {
     const state = expensesByCategory({  10: [], 100: [] }, { type: CATEGORY_REMOVE, payload: { id: 10 } });
     expect(state).toEqual({ 100: [] });
   });
+
+  it('adds an expense to a category', () => {
+    const state = expensesByCategory({ 10: [expense1] }, {
+      type:EXPENSE_ADD,
+      payload: {
+        categoryId: 10,
+        ...expense2
+      }
+    });
+    expect(state).toEqual({ 10: [expense1, expense2] });
+  });
 });
