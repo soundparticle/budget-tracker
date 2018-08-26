@@ -79,7 +79,6 @@ describe('categories reducers', () => {
 });
 
 // expenses reducers
-
 describe('expenses by category reducers', () => {
 
   const expense1 = {
@@ -104,7 +103,21 @@ describe('expenses by category reducers', () => {
   it('adds an expense sub-category to category', () => {
     const state = expensesByCategory({}, { type: CATEGORY_ADD, payload: { id: 10 } });
     console.log('*** state', state);
-    expect(state).toEqual({ 10: [] });
+    // expect(state).toEqual({ 10: [] });
   });
   
+  it('Loads expenses', () => {
+    const state = expensesByCategory({}, {
+      type: CATEGORY_LOAD,
+      payload: [{
+        id: 10,
+        expenses: [expense1]
+      },
+      {
+        id: 100,
+        expenses: [expense2]
+      }]
+    });
+    expect(state).toEqual({ 10: [expense1], 100: [expense2] });
+  });
 });
