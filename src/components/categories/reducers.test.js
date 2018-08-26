@@ -77,7 +77,6 @@ describe('categories reducers', () => {
     ]);
   });
 });
-
 // expenses reducers
 describe('expenses by category reducers', () => {
 
@@ -102,7 +101,6 @@ describe('expenses by category reducers', () => {
 
   it('adds an expense sub-category to category', () => {
     const state = expensesByCategory({}, { type: CATEGORY_ADD, payload: { id: 10 } });
-    // console.log('*** state', state);
     expect(state).toEqual({ 10: [] });
   });
   
@@ -126,7 +124,7 @@ describe('expenses by category reducers', () => {
     expect(state).toEqual({ 100: [] });
   });
 
-  it('adds an expense to a category', () => {
+  it('Adds an expense to a category', () => {
     const state = expensesByCategory({ 10: [expense1] }, {
       type:EXPENSE_ADD,
       payload: {
@@ -137,10 +135,17 @@ describe('expenses by category reducers', () => {
     expect(state).toEqual({ 10: [expense1, expense2] });
   });
 
-  it('updats an expense', () => {
+  it('Updates an expense', () => {
     const state = expensesByCategory(
       { 10: [{ id: 100, name: 'cd', price: 20 }] },
       { type: EXPENSE_UPDATE, payload: { categoryId: 10, id: 100, name: 'cd', price: 90 } });
     expect(state).toEqual({ 10: [{ categoryId: 10, id: 100, name: 'cd', price: 90 }] });
+  });
+
+  it('Deletes an expense', () => {
+    const state = expensesByCategory(
+      { 10: [expense1, expense2] },
+      { type: EXPENSE_DELETE, payload: expense2 });
+    expect(state).toEqual({ 10: [expense1] });
   });
 });
