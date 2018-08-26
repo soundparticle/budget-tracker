@@ -27,12 +27,10 @@ export function categories(state = [], { type, payload }) {
 
 export function expenses(state = [], { type, payload }) {
   switch(type) {
-    case EXPENSE_LOAD:
-      return payload;
     case EXPENSE_ADD:
       return [
         ...state,
-        payload
+        payload,
       ];
     case EXPENSE_UPDATE:
       return state.map(expense => expense.key === payload.key ? payload : expense);

@@ -83,6 +83,14 @@ describe('categories reducers', () => {
 
 describe.only('expenses by category reducers', () => {
 
+  const expense1 = {
+    id: 
+  };
+
+  const expense2 = {
+
+  };
+
   it('initialize to empty array', () => {
     const state = expenses(undefined, {});
     expect(state).toEqual([]);
