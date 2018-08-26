@@ -3,15 +3,15 @@
 // const URL = 'https://budget-tracker-5bf52.firebaseio.com/';
 // const CATEGORIES_URL = `${URL}/categories`;
 
-// const getCategoryUrl = key => `${CATEGORIES_URL}/${key}.json`;
+// const getCategoryUrl = id => `${CATEGORIES_URL}/${id}.json`;
 
 // export const getNotes = () => {
 //   return get(`${CATEGORIES_URL}.json`)
 //     .then(response => {
 //       return response
-//         ? Object.keys(response).map(key => {
-//           const each =  response[key];
-//           each.key = key;
+//         ? Object.ids(response).map(id => {
+//           const each =  response[id];
+//           each.id = id;
 //           return each;
 //         })
 //         : [];
@@ -22,13 +22,13 @@
 //   const url = `${CATEGORIES_URL}.json`;
 //   return post(url, category)
 //     .then(res => {
-//       category.key = res.name;
+//       category.id = res.name;
 //       return category;
 //     });
 // };
 
 // export const updateCategory = category => {
-//   const url = getCategoryUrl(category.key);
+//   const url = getCategoryUrl(category.id);
 //   return put(url, category);
 // };
 

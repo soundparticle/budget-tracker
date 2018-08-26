@@ -9,7 +9,7 @@ export const load = () => ({
 });
 
 export const add = category => {
-  category.key = shortid.generate();
+  category.id = shortid.generate();
   category.timestamp = new Date();
   return {
     type: CATEGORY_ADD,
@@ -28,7 +28,7 @@ export const remove = id => ({
 });
 // Expense Actions
 export const addExpense = expense => {
-  expense.key = shortid.generate();
+  expense.id = shortid.generate();
   expense.timestamp = new Date();
   return {
     type: EXPENSE_ADD,

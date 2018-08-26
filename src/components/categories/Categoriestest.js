@@ -5,8 +5,8 @@
 
 // describe('Categories', () => {
 //   const categories = [
-//     { name: 'shopping', budget: '400', key: 'abc' },
-//     { name: 'bills', budget: '200', key: 'def'},
-//     { name: 'shoe', budget: '80', key: "ghi"}
+//     { name: 'shopping', budget: '400', id: 'abc' },
+//     { name: 'bills', budget: '200', id: 'def'},
+//     { name: 'shoe', budget: '80', id: "ghi"}
 //   ];
 // }

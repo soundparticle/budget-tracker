@@ -8,7 +8,7 @@ describe('Category', () => {
     const handleRemove = jest.fn();
     const handleUpdate = jest.fn();
 
-    const category = { key: 'abc', name: 'shopping', budget: '400' };
+    const category = { id: 'abc', name: 'shopping', budget: '400' };
     const wrapper = shallow(<Category
       category={category}
       onRemove={handleRemove}
@@ -27,6 +27,6 @@ describe('Category', () => {
 
     const removeCalls = handleRemove.mock.calls;
     expect(removeCalls.length).toBe(1);
-    expect(removeCalls[0][0]).toBe(category.key);
+    expect(removeCalls[0][0]).toBe(category.id);
   });
 });
