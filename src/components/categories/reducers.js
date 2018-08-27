@@ -29,6 +29,8 @@ export function categories(state = [], { type, payload }) {
   }
 }
 // Expenses by Category
+// export const getExpenses(state) = state.expensesByCategory;
+
 export function expensesByCategory(state = {}, { type, payload }) {
   switch(type) {
     case CATEGORY_LOAD:
@@ -41,17 +43,21 @@ export function expensesByCategory(state = {}, { type, payload }) {
         ...state,
         [payload.id]: []
       };
+
+    // took id off payload
     case CATEGORY_REMOVE: {
+      // const { [payload]: ignore, ...rest } = state;
       const copy = { ...state };
-      delete copy[payload.id];
+      delete copy[payload];
       return copy;
     }
+    // added payload.expense
     case EXPENSE_ADD: {
       return {
         ...state,
         [payload.categoryId]: [
           ...state[payload.categoryId],
-          payload
+          payload.expense
         ]
       };
     }
