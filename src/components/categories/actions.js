@@ -1,5 +1,8 @@
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
 import { EXPENSE_ADD, EXPENSE_UPDATE, EXPENSE_REMOVE } from './reducers';
+
+import { postExpense, } from '../../services/categoryApi';
+
 import data from './categories-data';
 import shortid from 'shortid';
 
@@ -27,13 +30,22 @@ export const remove = id => ({
   payload: id
 });
 // Expense Actions
-export const addExpense = expense => {
-  expense.id = shortid.generate();
-  expense.timestamp = new Date();
-  return {
-    type: EXPENSE_ADD,
-    payload: expense
-  };
+export const addExpense = expense => dispach => {
+  postExpense(expense)
+    .then(
+      saved => {
+        dispach({
+          type: EXPENSE_ADD,
+          payload: JSON.parse(saved.text)
+        });
+      },
+      err => {
+        dispach({
+          type: Error,
+          payload: err
+        });
+      });
+    
 };
 
 export const updateExpense = expense => ({
