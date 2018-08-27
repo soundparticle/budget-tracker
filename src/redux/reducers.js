@@ -6,6 +6,9 @@ export const EXPENSE_ADD = 'EXPENSE_ADD';
 export const EXPENSE_UPDATE = 'EXPENSE_UPDATE';
 export const EXPENSE_REMOVE = 'EXPENSE_REMOVE';
 
+//selector
+export const getCategories = state => state.categories;
+
 export function categories(state = [], { type, payload }) {
   switch(type) {
     case CATEGORY_LOAD:
@@ -24,6 +27,10 @@ export function categories(state = [], { type, payload }) {
       return state;
   }
 }
+
+//selector
+export const getExpensesByCategories = state => state.expensesByCategory;
+export const getExpensesByCategoryId = (state, categoryId) => getExpensesByCategories(state)[categoryId];
 
 export function expensesByCategory(state = {}, { type, payload }) {
   switch(type) {
@@ -48,7 +55,7 @@ export function expensesByCategory(state = {}, { type, payload }) {
     case EXPENSE_ADD: {
       return {
         ...state,
-        [payload.categoryId]: [...state[payload.categoryId], payload]
+        [payload.categoryId]: [...state[payload.categoryId], payload.expense]
       };
     }
 

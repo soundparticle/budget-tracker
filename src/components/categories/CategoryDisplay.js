@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { remove } from '../../redux/actions';
+import Expenses from '../expenses/Expenses';
 
 class CategoryDisplay extends Component {
 
@@ -16,11 +17,16 @@ class CategoryDisplay extends Component {
 
     return (
       <div>
-        <h3>{category.name}</h3>
-        <p>{category.budget}</p>
-        <p>{category.timestamp}</p>
-        <button name="edit" onClick={onEdit}>✎</button>
-        <button name="delete" onClick={() => remove(category.key)}>🗑</button>
+        <section>
+          <h3>{category.name}</h3>
+          <p>{category.budget}</p>
+          <p>{category.timestamp}</p>
+          <button name="edit" onClick={onEdit}>✎</button>
+          <button name="delete" onClick={() => remove(category.key)}>🗑</button>
+        </section>
+        <section>
+          <Expenses categoryId={category.key}/>
+        </section>
       </div>
     );
   }

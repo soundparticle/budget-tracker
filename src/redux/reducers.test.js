@@ -117,7 +117,7 @@ describe('Expenses reducers', () => {
   });
 
   it('add an expense', () => {
-    const state = expensesByCategory({ '123': [expense1] },{
+    const state = expensesByCategory({ '123': [expense1] }, {
       type: EXPENSE_ADD,
       payload: { categoryId: '123', ...expense2 }
     });

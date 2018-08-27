@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CategoryForm from './categories/CategoryForm';
 import Categories from './categories/Categories';
 import { load, add, update } from '../redux/actions';
+import { getCategories } from '../redux/reducers';
 
 class Dashboard extends Component {
 
@@ -43,7 +44,7 @@ class Dashboard extends Component {
  
 export default connect(
   state => ({
-    categories: state
+    categories: getCategories(state)
   }),
   { load, add }
 )(Dashboard);

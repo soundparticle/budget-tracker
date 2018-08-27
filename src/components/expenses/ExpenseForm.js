@@ -15,6 +15,27 @@ class ExpenseForm extends Component {
      onCancel: PropTypes.func
    };
 
+   componentDidMount() {
+     const { expense } = this.props;
+     if(!expense) return;
+
+     this.setState(expense);
+   }
+
+   handleChange = ({ target }) => {
+     this.setState({ [target.name]: target.value });
+   };
+
+   handleSubmit = (event) => {
+     event.preventDefault();
+     const { key, name, price } = this.state;
+     const expense = { name, price };
+     if(key) expense.key = key;
+
+     this.props.onComplete(expense);
+     this.setState({ name: '', price: 0 });
+   };
+
    render() { 
      const { key, name, price } = this.state;
      const { onCancel } = this.props;
