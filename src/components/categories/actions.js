@@ -1,14 +1,14 @@
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
 import { EXPENSE_ADD, EXPENSE_UPDATE, EXPENSE_REMOVE } from './reducers';
 
-import { postExpense, } from '../../services/categoryApi';
+// import { postExpense, } from '../../services/categoryApi';
 
-import data from './categories-data';
+import CatData from './categories-data';
 import shortid from 'shortid';
 
 export const load = () => ({
   type: CATEGORY_LOAD, 
-  payload: data
+  payload: CatData
 });
 
 export const add = category => {
@@ -30,31 +30,36 @@ export const remove = id => ({
   payload: id
 });
 // Expense Actions
-export const addExpense = expense => dispach => {
-  postExpense(expense)
-    .then(
-      saved => {
-        dispach({
-          type: EXPENSE_ADD,
-          payload: JSON.parse(saved.text)
-        });
-      },
-      err => {
-        dispach({
-          type: Error,
-          payload: err
-        });
-      });
-    
+export const addExpense = expense => {
+  expense.id = shortid.generate();
+  expense.timestamp = new Date();
+  return {
+    type: EXPENSE_ADD,
+    payload: expense
+  };  
+  // postExpense(expense)
+  //   .then(
+  //     saved => {
+  //       dispach({
+  //         type: EXPENSE_ADD,
+  //         payload: JSON.parse(saved.text)
+  //       });
+  //     },
+  //     err => {
+  //       dispach({
+  //         type: Error,
+  //         payload: err
+  //       });
+  //     });
+
 };
 
-export const updateExpense = expense => ({
-  type: EXPENSE_UPDATE,
-  payload: expense
-});
+// export const updateExpense = expense => ({
+//   type: EXPENSE_UPDATE,
+//   payload: expense
+// });
 
-export const removeExpense = id => ({
-  type: EXPENSE_REMOVE,
-  payload: id
-});
-
+// export const removeExpense = id => ({
+//   type: EXPENSE_REMOVE,
+//   payload: id
+// });

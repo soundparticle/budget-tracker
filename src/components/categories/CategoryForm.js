@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class CategoryForm extends Component {
   state = {
     editing: false,
-    // key: null,
+    key: null,
     name: '',
     budget: 0,
   };
