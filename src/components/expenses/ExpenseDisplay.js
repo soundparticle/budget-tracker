@@ -7,8 +7,8 @@ class ExpenseDisplay extends Component {
   static  propTypes = {
     expense: PropTypes.object,
     onEdit: PropTypes.func,
-
-  }
+  };
+  
   render() { 
     const { expense, onEdit } = this.props;
     return ( 

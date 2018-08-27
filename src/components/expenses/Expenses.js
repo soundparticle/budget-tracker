@@ -18,7 +18,7 @@ class Expenses extends Component {
     const { addExpense, categoryId } = this.props;
     addExpense(categoryId, expense);
   };
-  
+
   render() { 
     const { expenses } = this.props;
     if(!expenses) return;
@@ -30,7 +30,7 @@ class Expenses extends Component {
         </section>
         <section>
           {expenses.map(expense => {
-            return <Expense key={expense.key} expense={expense}/>
+            return <Expense key={expense.key} expense={expense}/>;
           })
           }
         </section>

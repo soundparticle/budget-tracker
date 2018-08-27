@@ -16,11 +16,11 @@ class Expense extends Component {
      this.setState({ editing: true });
    };
 
-  handleComplete = category => {
-    const { update } = this.props;
-    update(expense);
-    this.handleEndEdit();
-  };
+   // handleComplete = category => {
+   //   const { update } = this.props;
+   //   update(expense);
+   //   this.handleEndEdit();
+   // };
 
   handleEndEdit = () => {
     this.setState({ editing: false });
