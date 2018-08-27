@@ -55,7 +55,7 @@ export function expensesByCategory(state = {}, { type, payload }) {
     case EXPENSE_ADD: {
       return {
         ...state,
-        [payload.categoryId]: [...state[payload.categoryId], payload.expense]
+        [payload.categoryId]: [...state[payload.categoryId], payload]
       };
     }
 
