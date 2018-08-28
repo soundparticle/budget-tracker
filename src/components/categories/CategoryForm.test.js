@@ -11,7 +11,7 @@ describe('category form', () => {
 
     expect(toJSON(wrapper)).toMatchSnapshot();
 
-    const category = {name: 'a thing', budget: 1 };
+    const category = { name: 'a thing', budget: 1 };
 
     wrapper.find('input[name="name"]').simulate('change', {
       target: {
