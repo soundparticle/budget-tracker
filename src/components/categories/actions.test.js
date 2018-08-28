@@ -1,14 +1,26 @@
-import { load, add, update, remove, addExpense } from './actions';
+jest.mock('../../services/categoryApi', () => ({
+  loadCategories: jest.fn(),
+  addCategory: jest.fn(),
+  removeCategory: jest.fn()
+}));
+
+import { load, add, update, remove, addExpense,  } from './actions';
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE, EXPENSE_ADD } from './reducers';
-import CatData from './categories-data';
+import { loadCategories, } from '../../services/categoryApi';
+
 
 // Category actions
 describe('CRUD category actions', () => {
 
   it('load', () => {
 
-    const action = load();
-    expect(action).toEqual({ type: CATEGORY_LOAD, payload: CatData });
+    const promise = Promise.resolve();
+    loadCategories.mockReturnValueOnce(promise);
+
+    const { type, payload } = load();
+    expect(type).toBe(CATEGORY_LOAD);
+    expect(payload).toBe(promise);
+    expect(loadCategories.mock.calls.length).toBe(1);
   });
 
   it('add', () => {
