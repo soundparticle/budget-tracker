@@ -3,7 +3,7 @@ import { EXPENSE_ADD } from './reducers';
 
 // import { loadExpense, } from '../../services/categoryApi';
 
-import CatData from './categories-data';
+import CatData from '../categories/categories-data';
 import shortid from 'shortid';
 
 export const load = () => ({

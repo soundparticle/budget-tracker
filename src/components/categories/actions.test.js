@@ -1,5 +1,5 @@
-import { load, add, update, remove, addExpense } from './actions';
-import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE, EXPENSE_ADD } from './reducers';
+import { load, add, update, remove, addExpense } from '../app/actions';
+import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE, EXPENSE_ADD } from '../app/reducers';
 import CatData from './categories-data';
 
 // Category actions

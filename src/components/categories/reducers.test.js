@@ -8,10 +8,10 @@ import {
   EXPENSE_ADD,
   EXPENSE_UPDATE,
   EXPENSE_DELETE
-} from './reducers';
+} from '../app/reducers';
 
 // categories reducers
-describe('categories reducers', () => {
+describe.only('categories reducers', () => {
 
   it('initialize to empty array', () => {
     const state = categories(undefined, {});

@@ -17,7 +17,7 @@ export const loadCategories = () => {
         : [];
     });
 };
-
+//category service methods
 export const addCategory = (category) => {
   if(AnimationPlaybackEvent.name === '') {
     return Promise.reject('Please fill out all fields!');
@@ -42,3 +42,4 @@ export const removeCategory = id => {
   const url = getCategoryUrl(id);
   return del(url);
 };
+// Expense service methods
