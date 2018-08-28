@@ -1,9 +1,11 @@
 import { put, post, get, del } from './request';
 
-const URL = 'https://todo-9ea8e.firebaseio.com';
+const URL = 'https://budget-tracker-f739a.firebaseio.com';
 const CATEGORIES_URL = `${URL}/categories`;
+// const EXPENSES_URL = `${CATEGORIES_URL}`;
 
 const getCategoryUrl = key => `${CATEGORIES_URL}/${key}.json`;
+// const getExpenseUrl = key => `${EXPENSES_URL}/${key}/expenses.json`;
 
 export const getCategories = () => {
   return get(`${CATEGORIES_URL}.json`)
@@ -36,3 +38,5 @@ export const removeCategory = id => {
   const url = getCategoryUrl(id);
   return del(url);
 };
+
+// export const addExpense =
