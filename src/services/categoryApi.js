@@ -5,7 +5,7 @@ const CATEGORIES_URL = `${URL}/categories`;
 
 const getCategoryUrl = id => `${CATEGORIES_URL}/${id}.json`;
 
-export const getNotes = () => {
+export const loadCategories = () => {
   return get(`${CATEGORIES_URL}.json`)
     .then(response => {
       return response
@@ -19,6 +19,10 @@ export const getNotes = () => {
 };
 
 export const addCategory = (category) => {
+  if(AnimationPlaybackEvent.name === '') {
+    return Promise.reject('Please fill out all fields!');
+  }
+
   const url = `${CATEGORIES_URL}.json`;
   return post(url, category)
     .then(res => {
@@ -28,8 +32,10 @@ export const addCategory = (category) => {
 };
 
 export const updateCategory = category => {
+  // eslint-disable-next-line
+  const { id, ...copy } = category;
   const url = getCategoryUrl(category.id);
-  return put(url, category);
+  return put(url, copy);
 };
 
 export const removeCategory = id => {

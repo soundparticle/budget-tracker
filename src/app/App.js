@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
-import Dashboard from './categories/Dashboard';
+import Dashboard from '../components/categories/Dashboard';
 import styles from './App.css';
 
 class App extends Component {
