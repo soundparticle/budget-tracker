@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`category form renders add when no category props 1`] = `
+<CategoryForm
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Name:
+      <input
+        name="name"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      Budget:
+      <input
+        name="budget"
+        onChange={[Function]}
+        type="number"
+        value={0}
+      />
+    </label>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</CategoryForm>
+`;
+
+exports[`category form renders edit when category props present 1`] = `
+<CategoryForm
+  category={
+    Object {
+      "budget": 1000,
+      "name": "needles",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Name:
+      <input
+        name="name"
+        onChange={[Function]}
+        value="needles"
+      />
+    </label>
+    <label>
+      Budget:
+      <input
+        name="budget"
+        onChange={[Function]}
+        type="number"
+        value={1000}
+      />
+    </label>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</CategoryForm>
+`;
