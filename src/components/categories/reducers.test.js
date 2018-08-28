@@ -8,7 +8,7 @@ import {
   EXPENSE_ADD,
   EXPENSE_UPDATE,
   EXPENSE_DELETE
-} from '../app/reducers';
+} from './reducers';
 
 // categories reducers
 describe.only('categories reducers', () => {
