@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category item display renders category display 1`] = `
+<div>
+  <section>
+    <h3>
+      name
+    </h3>
+    <p>
+      1
+    </p>
+    <p />
+    <button
+      name="edit"
+      onClick={[MockFunction]}
+    >
+      ✎
+    </button>
+    <button
+      name="delete"
+      onClick={[Function]}
+    >
+      🗑
+    </button>
+  </section>
+  <section>
+    <Connect(Expenses) />
+  </section>
+</div>
+`;

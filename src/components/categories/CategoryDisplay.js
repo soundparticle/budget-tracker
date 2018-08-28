@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { remove } from './categoryActions';
 import Expenses from '../expenses/Expenses';
 
-class CategoryDisplay extends Component {
+export class CategoryDisplay extends Component {
 
   static propTypes = {
     category: PropTypes.object.isRequired,
