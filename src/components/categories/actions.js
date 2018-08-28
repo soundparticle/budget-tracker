@@ -30,17 +30,17 @@ export const remove = id => ({
   payload: id
 });
 
-export const addExpense = expense => dispach => {
+export const addExpense = expense => dispatch => {
   postExpense(expense)
     .then(
       saved => {
-        dispach({
+        dispatch({
           type: EXPENSE_ADD,
           payload: JSON.parse(saved.text)
         });
       },
       err => {
-        dispach({
+        dispatch({
           type: Error,
           payload: err
         });

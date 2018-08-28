@@ -2,25 +2,26 @@ import { LOAD_START, LOAD_END, ERROR } from '../components/app/error-reducers';
 
 const isPromise = val => val && typeof val.then === 'function';
 
-export default ({ dispach }) => next => action => {
+export default ({ dispatch }) => next => action => {
+
   const { type, payload } = action;
   if(!isPromise(payload)) return next(action);
 
-  dispach({ type: LOAD_START }); 
+  dispatch({ type: LOAD_START }); 
 
   return payload
     .then(
       result => {
-        dispach({ type: LOAD_END });
+        dispatch({ type: LOAD_END });
 
-        return dispach({
+        return dispatch({
           type,
           payload: result
         });
       },
-      err => {
-        dispach({ type: LOAD_END });
-        dispach({ type: ERROR, payload: err });
+      err => {  
+        dispatch({ type: LOAD_END });
+        dispatch({ type: ERROR, payload: err });
         throw err;
       }
     );
