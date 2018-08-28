@@ -19,7 +19,7 @@ export const loadCategories = () => {
 };
 //category service methods
 export const addCategory = (category) => {
-  if(AnimationPlaybackEvent.name === '') {
+  if(category.name === '') {
     return Promise.reject('Please fill out all fields!');
   }
 
