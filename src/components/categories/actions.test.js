@@ -6,7 +6,7 @@ jest.mock('../../services/categoryApi', () => ({
 
 import { load, add, update, remove, addExpense,  } from './actions';
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE, EXPENSE_ADD } from './reducers';
-import { loadCategories, } from '../../services/categoryApi';
+import { loadCategories, addCategory } from '../../services/categoryApi';
 
 
 // Category actions
@@ -24,9 +24,15 @@ describe('CRUD category actions', () => {
   });
 
   it('add', () => {
-    const payload = {};
-    const action = add(payload);
-    expect(action).toEqual({ type: CATEGORY_ADD, payload: payload });
+    const category = { name: 'fuzz' };
+    const promise = Promise.resolve();
+    addCategory.mockReturnValueOnce(promise);
+
+    const { type, payload } = add(category);
+    expect(type).toBe(CATEGORY_ADD);
+    expect(payload).toBe(promise);
+    expect(addCategory.mock.calls.length).toBe(1);
+    expect(addCategory.mock.calls[0][0]).toBe(category);
   });
 
   it('updates', () => {
