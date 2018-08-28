@@ -10,22 +10,29 @@ class Dashboard extends Component {
 
   static propTypes = {
     categories: PropTypes.array,
+    add: PropTypes.func.isRequired,
     load: PropTypes.func.isRequired,
-    add: PropTypes.func.isRequired
+    // remove: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
     this.props.load();
   }
 
+  handleComplete = (category) => {
+    const { add } = this.props;
+    return add(category);
+  };
+
   render() {
-    const { categories, add } = this.props;
+    const { categories } = this.props;
+    // if(!categories) return null;
 
     return (
       <div>
         <section>
           <h3>Add an Category</h3>
-          <CategoryForm onComplete={add}/>
+          <CategoryForm onComplete={this.handleComplete}/>
         </section>
 
         {categories && 

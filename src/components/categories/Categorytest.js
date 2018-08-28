@@ -11,7 +11,7 @@ describe('Category', () => {
     const category = { id: 'abc', name: 'shopping', budget: '400' };
     const wrapper = shallow(<Category
       category={category}
-      onRemove={handleRemove}
+      remove={handleRemove}
       onUpdate={handleUpdate}
     />);
 

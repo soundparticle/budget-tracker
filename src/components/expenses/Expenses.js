@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { addExpense, removeExpense } from '../categories/actions';
 import { getExpensesByCategory } from '../categories/reducers';
 import ExpenseDisplay from './ExpenseDisplay';
 import ExpensesForm from './ExpensesForm';
-import { addExpense, removeExpense } from '../categories/actions';
 // import styles from './Expenses.css';
 
 
