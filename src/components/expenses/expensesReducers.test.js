@@ -62,7 +62,6 @@ describe('Expenses reducers', () => {
       type: EXPENSE_ADD,
       payload: { categoryId: '123', ...expense2 }
     });
-    console.log(state);
     expect(state).toEqual({ '123': [expense1, expense2] });
   });
 

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import Expense from './Expense';
-import { getExpensesByCategoryId } from '../categories/categoriesReducers';
-import { addExpense } from '../../redux/actions';
+import { getExpensesByCategoryId } from '../expenses/expensesReducers';
+import { addExpense } from '../expenses/expenseActions';
 
 class Expenses extends Component {
 
@@ -16,7 +16,7 @@ class Expenses extends Component {
 
   handleAddExpense = expense => {
     const { addExpense, categoryId } = this.props;
-    addExpense(categoryId, expense);
+    addExpense(categoryId, { ...expense });
   };
 
   render() { 

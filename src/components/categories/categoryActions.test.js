@@ -1,5 +1,5 @@
-import { load, add, remove, update } from './actions';
-import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE, CATEGORY_UPDATE } from '../components/categories/categoriesReducers';
+import { load, add, remove, update } from './categoryActions';
+import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE, CATEGORY_UPDATE } from './categoriesReducers';
 
 describe('category actions', () => {
 

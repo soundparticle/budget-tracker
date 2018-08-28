@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { remove } from '../../redux/actions';
+import { remove } from './categoryActions';
 import Expenses from '../expenses/Expenses';
 
 class CategoryDisplay extends Component {

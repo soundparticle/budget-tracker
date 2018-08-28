@@ -8,7 +8,7 @@ export const getExpensesByCategories = state => state.expensesByCategory;
 export const getExpensesByCategoryId = (state, categoryId) => getExpensesByCategories(state)[categoryId];
 
 export function expensesByCategory(state = {}, { type, payload }) {
-  console.log('payload', payload);
+  // console.log('payload', payload);
   switch(type) {
     case CATEGORY_LOAD:
       return payload.reduce((map, category) => {
@@ -36,10 +36,10 @@ export function expensesByCategory(state = {}, { type, payload }) {
     }
 
     case EXPENSE_UPDATE: {
-      const newState = { ...state };
-      const update = newState[payload.categoryId].map(expense => expense.key === payload.key ? payload : expense);
-      newState[payload.categoryId] = update;
-      return newState;
+      return {
+        ...state,
+        [payload.categoryId]: state[payload.categoryId].map(expense => expense.key === payload.key ? payload : expense)
+      };
     }
 
     case EXPENSE_REMOVE: {
