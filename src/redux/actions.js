@@ -4,7 +4,7 @@ import {
   CATEGORY_REMOVE, 
   CATEGORY_UPDATE, 
   EXPENSE_ADD
-} from './reducers';
+} from '../components/categories/categoriesReducers';
 
 import data from '../components/categories/category-data';
 import shortid from 'shortid';
@@ -35,9 +35,10 @@ export const remove = key => ({
 
 export const addExpense = (categoryId, expense) => {
   expense.key = shortid.generate();
-  expense.timestamp = new Date();
+  expense.timestamp = (new Date()).toLocaleString();
+  expense.categoryId = categoryId;
   return {
     type: EXPENSE_ADD,
-    payload: { categoryId, expense }
+    payload: { ...expense }
   };
 };

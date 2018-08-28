@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CategoryForm from './categories/CategoryForm';
 import Categories from './categories/Categories';
 import { load, add, update } from '../redux/actions';
-import { getCategories } from '../redux/reducers';
+import { getCategories } from './categories/categoriesReducers';
 
 class Dashboard extends Component {
 

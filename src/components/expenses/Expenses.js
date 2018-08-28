@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import Expense from './Expense';
-import { getExpensesByCategoryId } from '../../redux/reducers';
+import { getExpensesByCategoryId } from '../categories/categoriesReducers';
 import { addExpense } from '../../redux/actions';
 
 class Expenses extends Component {

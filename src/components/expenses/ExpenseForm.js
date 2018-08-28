@@ -12,7 +12,8 @@ class ExpenseForm extends Component {
    static propTypes = {
      expense: PropTypes.object,
      onComplete: PropTypes.func.isRequired,
-     onCancel: PropTypes.func
+     onCancel: PropTypes.func,
+     categoryId: PropTypes.string
    };
 
    componentDidMount() {
@@ -31,6 +32,9 @@ class ExpenseForm extends Component {
      const { key, name, price } = this.state;
      const expense = { name, price };
      if(key) expense.key = key;
+     if(this.props.categoryId){
+       expense.categoryId = this.props.categoryId;
+     }
 
      this.props.onComplete(expense);
      this.setState({ name: '', price: 0 });

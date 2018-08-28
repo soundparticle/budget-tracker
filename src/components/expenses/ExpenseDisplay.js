@@ -8,13 +8,13 @@ class ExpenseDisplay extends Component {
     expense: PropTypes.object,
     onEdit: PropTypes.func,
   };
-  
+
   render() { 
     const { expense, onEdit } = this.props;
     return ( 
       <section className="expense-display">
         <h3>{expense.name}</h3>
-        <p>{expense.budget}</p>
+        <p>{expense.price}</p>
         <p>{expense.timestamp}</p>
         <button name="edit" onClick={onEdit}>✎</button>
       </section>

@@ -1,38 +1,14 @@
-export const CATEGORY_LOAD = 'CATEGORY_LOAD';
-export const CATEGORY_ADD = 'CATEGORY_ADD';
-export const CATEGORY_UPDATE = 'CATEGORY_UPDATE';
-export const CATEGORY_REMOVE = 'CATEGORY_REMOVE';
+import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_REMOVE } from '../categories/categoriesReducers';
 export const EXPENSE_ADD = 'EXPENSE_ADD';
 export const EXPENSE_UPDATE = 'EXPENSE_UPDATE';
 export const EXPENSE_REMOVE = 'EXPENSE_REMOVE';
-
-//selector
-export const getCategories = state => state.categories;
-
-export function categories(state = [], { type, payload }) {
-  switch(type) {
-    case CATEGORY_LOAD:
-      return payload;
-
-    case CATEGORY_ADD:
-      return [...state, payload];
-      
-    case CATEGORY_UPDATE:
-      return state.map(category => category.key === payload.key ? payload : category);
-
-    case CATEGORY_REMOVE:
-      return state.filter(category => category.key !== payload);
-
-    default:
-      return state;
-  }
-}
 
 //selector
 export const getExpensesByCategories = state => state.expensesByCategory;
 export const getExpensesByCategoryId = (state, categoryId) => getExpensesByCategories(state)[categoryId];
 
 export function expensesByCategory(state = {}, { type, payload }) {
+  console.log('payload', payload);
   switch(type) {
     case CATEGORY_LOAD:
       return payload.reduce((map, category) => {
@@ -48,14 +24,14 @@ export function expensesByCategory(state = {}, { type, payload }) {
 
     case CATEGORY_REMOVE: {
       const newState = { ...state };
-      delete newState[payload.key];
+      delete newState[payload.key];//key?
       return newState;
     }
 
     case EXPENSE_ADD: {
       return {
         ...state,
-        [payload.categoryId]: [...state[payload.categoryId], payload]
+        [payload.categoryId]: [...state[payload.categoryId], payload]//payload.expense?
       };
     }
 
