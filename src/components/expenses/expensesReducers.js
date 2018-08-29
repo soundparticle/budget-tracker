@@ -7,21 +7,12 @@ export const EXPENSE_REMOVE = 'EXPENSE_REMOVE';
 export const getExpensesByCategories = state => state.expensesByCategory;
 export const getExpensesByCategoryId = (state, categoryId) => getExpensesByCategories(state)[categoryId];
 
-const transformToArray = obj => {
-  return obj
-    ? Object.keys(obj).map((key => {
-      const each = obj[key];
-      each.key = key;
-      return each;
-    }))
-    : [];
-};
-
 export function expensesByCategory(state = {}, { type, payload }) {
+
   switch(type) {
     case CATEGORY_LOAD:
       return payload.reduce((map, category) => {
-        map[category.key] = transformToArray(category.expenses);
+        map[category.key] = category.expenses;
         return map;
       }, {});
 
@@ -38,6 +29,8 @@ export function expensesByCategory(state = {}, { type, payload }) {
     }
 
     case EXPENSE_ADD: {
+      console.log('EXPENSE_ADD', state);
+      console.log('payload', payload);
       return {
         ...state,
         [payload.categoryId]: [...state[payload.categoryId], payload]//payload.expense?

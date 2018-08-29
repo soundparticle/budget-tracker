@@ -29,19 +29,11 @@ class Dashboard extends Component {
 
   componentDidMount(){
 
-    // const categoriesRef = database.ref('categories');
-
-    // categoriesRef.on('value', (snapshot) => {
-    //   const response = snapshot.val();
-    //   const categories = Object.keys(response)
-    //     .map(key => response[key]);
-    //   this.setState({ categories });
-    // });
     this.props.load();
   }
   render() { 
     const { categories, add } = this.props;
-
+    console.log('dashboard', categories);
     return (
       <div>
         <section>
