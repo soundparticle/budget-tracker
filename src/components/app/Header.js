@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import Error from './Error';
 import styles from './Header.css';
 
 class Header extends Component {
@@ -22,6 +23,7 @@ class Header extends Component {
             </ul>
           </nav>
         </section>
+        <Error/>
       </div>      
     );
   }

@@ -26,6 +26,9 @@ export const getCategories = () => {
 };
 
 export const addCategory = category => {
+  if(category.name === 'error') {
+    return Promise.reject('This is an error');
+  }
   const url = `${CATEGORIES_URL}.json`;
   return post(url, category)
     .then(res => {

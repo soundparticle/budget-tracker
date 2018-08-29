@@ -3,29 +3,30 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getError } from './reducers';
 import { clearError } from './actions';
+import styles from './Error.css';
 
 export class Error extends Component {
   static propTypes = {
     error: PropTypes.any,
     clearError: PropTypes.func
-  }
+  };
 
-  componentDidUpdate() {
-    const { error, clearError } = this.props;
+  // componentDidUpdate() {
+  //   const { error, clearError } = this.props;
 
-    if(error) {
-      setTimeout(() => {
-        clearError();
-      }, 5000);
-    }
-  }
+  //   if(error) {
+  //     setTimeout(() => {
+  //       clearError();
+  //     }, 5000);
+  //   }
+  // }
 
   render() { 
     const { error } = this.props;
     if(!error) return null;
 
     return (
-      <pre className="error">{error}</pre>
+      <pre className={styles.error}>{error}</pre>
     );
   }
 }
