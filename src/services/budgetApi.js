@@ -57,3 +57,8 @@ export const updateExpense = expense => {
   const url = getExpenseUrl(expense.categoryId, expense.key);
   return put(url, expense);
 };
+
+export const removeExpense = expense => {
+  const url = getExpenseUrl(expense.categoryId, expense.key);
+  return del(url);
+};

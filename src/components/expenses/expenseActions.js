@@ -22,6 +22,6 @@ export const update = expense => {
 export const remove = expense => {
   return {
     type: EXPENSE_REMOVE,
-    payload: { ...expense }
+    payload: removeExpense(expense).then(() => expense)
   };
 };

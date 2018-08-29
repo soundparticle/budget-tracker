@@ -1,11 +1,12 @@
 jest.mock('../../services/budgetApi', () => ({
   addExpense: jest.fn(),
-  updateExpense: jest.fn()
+  updateExpense: jest.fn(),
+  removeExpense: jest.fn()
 }));
 
 import { add, update, remove } from './expenseActions';
 import { EXPENSE_ADD, EXPENSE_UPDATE, EXPENSE_REMOVE } from './expensesReducers';
-import { addExpense, updateExpense } from '../../services/budgetApi';
+import { addExpense, updateExpense, removeExpense } from '../../services/budgetApi';
 
 
 describe('expense actions', () => {
@@ -36,11 +37,17 @@ describe('expense actions', () => {
   });
 
   it('removes expense', () => {
-    const payload = {};
-    const action = {
-      type: EXPENSE_REMOVE,
-      payload
-    };
-    expect(remove(payload).type).toEqual(action.type);
+    const promise = Promise.resolve();
+    removeExpense.mockReturnValueOnce(promise);
+    const expense = { name: 'forks' };
+
+    const { type, payload } = remove(expense);
+    expect(type).toBe(EXPENSE_REMOVE);
+    expect(removeExpense.mock.calls.length).toBe(1);
+    expect(removeExpense.mock.calls[0][0]).toBe(expense);
+
+    return payload.then(deleted => {
+      expect(deleted).toBe(expense);
+    });
   });
 });
