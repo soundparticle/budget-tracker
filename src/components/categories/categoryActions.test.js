@@ -41,8 +41,8 @@ describe('category actions', () => {
     const { type, payload } = update(category);
     expect(type).toBe(CATEGORY_UPDATE);
     expect(payload).toBe(promise);
-    expect(addCategory.mock.calls.length).toBe(1);
-    expect(addCategory.mock.calls[0][0]).toBe(category);
+    expect(updateCategory.mock.calls.length).toBe(1);
+    expect(updateCategory.mock.calls[0][0]).toBe(category);
 
   });
 

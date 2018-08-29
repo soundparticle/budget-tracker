@@ -18,13 +18,14 @@ const transformToArray = obj => {
 export const getCategories = () => {
   return get(`${CATEGORIES_URL}.json`)
     .then(response => {
-      const categories = transformToArray(response)
-      categories.forEach(category => category.expense = transformToArray(category.expense));
+      const categories = transformToArray(response);
+      console.log('budgetApi categories', categories);
+      categories.forEach(category => category.expenses = transformToArray(category.expenses));
       return categories;
     });
 };
 
-export const addCategory =  (category) => {
+export const addCategory = category => {
   const url = `${CATEGORIES_URL}.json`;
   return post(url, category)
     .then(res => {
@@ -43,7 +44,7 @@ export const removeCategory = id => {
   return del(url);
 };
 
-export const addExpense = (expense) => {
+export const addExpense = expense => {
   const url = `${CATEGORIES_URL}/${expense.categoryId}/expenses.json`;
   return post(url, expense)
     .then(res => {
@@ -52,4 +53,7 @@ export const addExpense = (expense) => {
     });
 };
 
-// export const addExpense =
+export const updateExpense = expense => {
+  const url = getExpenseUrl(expense.categoryId, expense.key);
+  return put(url, expense);
+};

@@ -5,18 +5,6 @@ import CategoryForm from './categories/CategoryForm';
 import Categories from './categories/Categories';
 import { load, add, update } from './categories/categoryActions';
 import { getCategories } from './categories/categoriesReducers';
-// import firebase from 'firebase';
-// var config = {
-//   apiKey: 'apiKey',
-//   authDomain: 'budget-tracker-f739a.firebaseio.com',
-//   databaseURL: 'https://budget-tracker-f739a.firebaseio.com',
-//   storageBucket: 'budget-tracker-f739a.appspot.com'
-// };
-// firebase.initializeApp(config);
-
-// Get a reference to the database service
-// var database = firebase.database();
-
 
 class Dashboard extends Component {
 

@@ -13,12 +13,12 @@ class ExpenseForm extends Component {
      expense: PropTypes.object,
      onComplete: PropTypes.func.isRequired,
      onCancel: PropTypes.func,
-     categoryId: PropTypes.string
+     categoryId: PropTypes.string.isRequired
    };
 
    componentDidMount() {
      const { expense } = this.props;
-     if(!expense) return;
+     if(!expense) return null;
 
      this.setState(expense);
    }

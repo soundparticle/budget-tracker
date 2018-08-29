@@ -6,7 +6,7 @@ import {
 } from './categoriesReducers';
 
 import { getCategories, addCategory, updateCategory, removeCategory } from '../../services/budgetApi';
-import shortid from 'shortid';
+// import shortid from 'shortid';
 
 export const load = () => ({
   type: CATEGORY_LOAD,
@@ -14,7 +14,7 @@ export const load = () => ({
 });
 
 export const add = category => {
-  category.key = shortid.generate();
+  // category.key = shortid.generate();
   category.timestamp = (new Date()).toLocaleString();
   return {
     type: CATEGORY_ADD,

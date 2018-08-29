@@ -35,6 +35,7 @@ class Expense extends Component {
       <li>
         {editing
           ? <ExpenseForm
+            categoryId={expense.categoryId}
             expense={expense}
             onComplete={this.handleComplete}
             onCancel={this.handleEndEdit}
