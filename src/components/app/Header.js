@@ -23,7 +23,7 @@ class Header extends Component {
         <section className="header-container">
           <div className="logo">
             <img src={logo}/>
-            <h1>Categories</h1>
+            <h1>Budget Tracker</h1>
           </div>
           <nav>
             <ul>
@@ -31,7 +31,7 @@ class Header extends Component {
                 <NavLink exact activeClassName="active" to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink exact activeClassName="active" to="/categories">Categories</NavLink>
+                <NavLink exact activeClassName="active" to="/categories">Budget</NavLink>
               </li>
 
             </ul> 
