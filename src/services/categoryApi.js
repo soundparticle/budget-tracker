@@ -5,16 +5,24 @@ const CATEGORIES_URL = `${URL}/categories`;
 
 const getCategoryUrl = id => `${CATEGORIES_URL}/${id}.json`;
 
+const pivot = obj => {
+  if(!obj) return [];
+
+  return Object.keys(obj).map(key => {
+    const each = obj[key];
+    each.key = key;
+    return each;
+  });
+};
+
 export const loadCategories = () => {
   return get(`${CATEGORIES_URL}.json`)
     .then(response => {
-      return response
-        ? Object.ids(response).map(id => {
-          const each =  response[id];
-          each.id = id;
-          return each;
-        })
-        : [];
+      const categories = pivot(response);
+      categories.forEach(category => {
+        category.expenses = pivot(category.expenses);
+      });
+      return categories;        
     });
 };
 //category service methods

@@ -1,7 +1,7 @@
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
 import { EXPENSE_ADD } from './reducers';
 
-import { loadCategories, postExpense, addCategory, removeCategory } from '../../services/categoryApi';
+import { loadCategories, postExpense, addCategory, removeCategory, updateCategory } from '../../services/categoryApi';
 
 // import CatData from '../categories/categories-data';
 export const load = () => ({
@@ -23,7 +23,7 @@ export const add = category => ({
 
 export const update = category => ({
   type: CATEGORY_UPDATE,
-  payload: category
+  payload: updateCategory(category)
 });
 
 export const remove = id => ({

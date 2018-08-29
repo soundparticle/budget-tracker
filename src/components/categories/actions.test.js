@@ -1,12 +1,13 @@
 jest.mock('../../services/categoryApi', () => ({
   loadCategories: jest.fn(),
   addCategory: jest.fn(),
-  removeCategory: jest.fn()
+  removeCategory: jest.fn(),
+  updateCategory: jest.fn()
 }));
 
 import { load, add, update, remove, addExpense,  } from './actions';
 import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE, EXPENSE_ADD } from './reducers';
-import { loadCategories, addCategory, removeCategory } from '../../services/categoryApi';
+import { loadCategories, addCategory, removeCategory, updateCategory } from '../../services/categoryApi';
 
 
 // Category actions
@@ -35,6 +36,19 @@ describe('CRUD category actions', () => {
     expect(addCategory.mock.calls[0][0]).toBe(category);
   });
 
+  it('updates a category', () => {
+    const category = { id: 123, name: 'fuzz', budget: 90 };
+    const promise = Promise.resolve();
+    updateCategory.mockReturnValueOnce(promise);
+
+    const { type, payload } = update(category);
+    expect(type).toBe(CATEGORY_UPDATE);
+    expect(payload).toBe(promise);
+    expect(updateCategory.mock.calls.length).toBe(1);
+    expect(updateCategory.mock.calls[0][0]).toBe(category);
+
+  });
+
   it('removes a category', () => {
     const promise = Promise.resolve();
     removeCategory.mockReturnValueOnce(promise);
@@ -50,10 +64,6 @@ describe('CRUD category actions', () => {
     });
   });
 
-  it('updates a category', () => {
-    const action = update(4);
-    expect(action).toEqual({ type: CATEGORY_UPDATE, payload: 4 });
-  });
 });
 // Expense actions
 
