@@ -99,7 +99,7 @@ exports[`Category form renders add if no category prop 2`] = `
     <InputControl
       name="budget"
       onChange={[Function]}
-      value=""
+      value={0}
     >
       <p>
         <label>
@@ -109,7 +109,7 @@ exports[`Category form renders add if no category prop 2`] = `
             name="budget"
             onChange={[Function]}
             required={true}
-            value=""
+            value={0}
           />
         </label>
       </p>
@@ -170,7 +170,7 @@ exports[`Category form renders add if no category prop 3`] = `
     <InputControl
       name="budget"
       onChange={[Function]}
-      value=""
+      value={0}
     >
       <p>
         <label>
@@ -180,7 +180,7 @@ exports[`Category form renders add if no category prop 3`] = `
             name="budget"
             onChange={[Function]}
             required={true}
-            value=""
+            value={0}
           />
         </label>
       </p>

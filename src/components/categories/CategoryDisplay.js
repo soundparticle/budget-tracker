@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { remove } from './actions';
 // import CategoryForm from './CategoryForm';
 // import Expenses from '../expenses/Expenses';
-import { remove } from './actions';
 
 export class CategoryDisplay extends Component {
 
   static propTypes = {
     category: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
-    remove: PropTypes.func,
+    // update: PropTypes.func,
+    remove: PropTypes.func
   };
 
-  // state = {
-  //   editing: false
-  // };
-  // handleEdit = () => {
-  //   this.setState({ editing: true });
-  // };
+  state = {
+    editing: false
+  };
 
-  // handleCancel = () => {
-  //   this.setState({ editing: false });
-  // };
+  handleEdit = () => {
+    this.setState({ editing: true });
+  };
+
+  handleCancel = () => {
+    this.setState({ editing: false });
+  };
 
   // handleUpdate = data => {
   //   this.props.update(data);
@@ -38,7 +40,7 @@ export class CategoryDisplay extends Component {
       <p>
         {category.name} gets a budget of {category.budget}
         <button name="edit" onClick={onEdit}>✎</button>
-        <button name="remove" onClick={() => remove(category.id)}>🗑</button>
+        <button name="remove" onClick={() => remove(category.key)}>🗑</button>
       </p>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Category from './Category';
 
+
 export class Categories extends Component {
 
   static propTypes ={

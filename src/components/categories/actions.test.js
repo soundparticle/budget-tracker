@@ -1,8 +1,8 @@
 jest.mock('../../services/categoryApi', () => ({
   loadCategories: jest.fn(),
   addCategory: jest.fn(),
+  updateCategory: jest.fn(),
   removeCategory: jest.fn(),
-  updateCategory: jest.fn()
 }));
 
 import { load, add, update, remove, addExpense,  } from './actions';

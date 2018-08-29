@@ -41,8 +41,8 @@ export const addCategory = (category) => {
 
 export const updateCategory = category => {
   // eslint-disable-next-line
-  const { id, ...copy } = category;
-  const url = getCategoryUrl(category.id);
+  const { key, ...copy } = category;
+  const url = getCategoryUrl(category.key);
   return put(url, copy);
 };
 
