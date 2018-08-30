@@ -19,7 +19,6 @@ export const getCategories = () => {
   return get(`${CATEGORIES_URL}.json`)
     .then(response => {
       const categories = transformToArray(response);
-      console.log('budgetApi categories', categories);
       categories.forEach(category => category.expenses = transformToArray(category.expenses));
       return categories;
     });

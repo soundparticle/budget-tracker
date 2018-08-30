@@ -29,14 +29,12 @@ export function expensesByCategory(state = {}, { type, payload }) {
     }
 
     case EXPENSE_ADD: 
-      console.log('EXPENSE_ADD', state);
-      console.log('payload', payload);
       return {
         ...state,
         [payload.categoryId]: [
           ...state[payload.categoryId], 
           payload
-        ]//payload.expense?
+        ]
       };
 
     case EXPENSE_UPDATE: {

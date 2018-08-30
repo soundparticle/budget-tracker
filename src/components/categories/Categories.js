@@ -10,7 +10,6 @@ class Categories extends Component {
 
   render() { 
     const { categories } = this.props;
-    console.log('categories.js', categories);
     return ( 
       <Fragment>
         <h3>Category</h3>

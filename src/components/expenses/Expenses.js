@@ -16,7 +16,6 @@ class Expenses extends Component {
 
   handleAddExpense = expense => {
     const { add, categoryId } = this.props;
-    console.log('in exoenses', { ...expense });
     add(categoryId, expense);
   };
 
@@ -24,10 +23,6 @@ class Expenses extends Component {
     const { expenses, categoryId } = this.props;
     return ( 
       <ul>
-        <section className="expense-form">
-          <h3>Add an expense</h3>
-          <ExpenseForm categoryId={categoryId} onComplete={this.handleAddExpense}/>
-        </section>
         {expenses && 
         <section>
 
@@ -37,6 +32,10 @@ class Expenses extends Component {
           }
         </section>
         }
+        <section className="expense-form">
+          <h3>Add an expense</h3>
+          <ExpenseForm categoryId={categoryId} onComplete={this.handleAddExpense}/>
+        </section>
       </ul>
     );
   }
