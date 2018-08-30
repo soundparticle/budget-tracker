@@ -10,7 +10,7 @@ class ExpenseForm extends Component {
 
   static propTypes = {
     expense: PropTypes.object,
-    onComplete: PropTypes.func.isRequired,
+    onComplete: PropTypes.func,
     onCancel: PropTypes.func
   };
 

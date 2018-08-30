@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'react-redux';
 import { connect } from 'react-redux';
-import { removeExpense } from '../categories/actions';
+import { removeExpense, } from './expenseActions';
 
 class ExpenseDisplay extends Component {
 
   static propTypes = {
+    // TODO fix this proptype error
+
     expense: PropTypes.object,
     onEdit: PropTypes.func,
     removeExpense: PropTypes.func
   };
-
+  
   render() {
-    console.log('** expense', expense);
     const { expense, onEdit, removeExpense } = this.props;
+    console.log('** expense', expense);
 
     return (
       <p>

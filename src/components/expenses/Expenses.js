@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addExpense, removeExpense } from '../categories/actions';
-import { getExpensesByCategory } from '../categories/reducers';
+import { addExpense, removeExpense } from './expenseActions';
+import { getExpensesByCategory } from './expenseReducers';
 import Expense from './Expense';
 import ExpensesForm from './ExpensesForm';
 // import styles from './Expenses.css';
 
 
-export class Expenses extends Component {
+class Expenses extends Component {
 
   static propTypes = {
-    categoryId: PropTypes.string.isRequired,
     expenses: PropTypes.array,
-    addExpense: PropTypes.func.isRequired,
+    categoryId: PropTypes.string,
+    addExpense: PropTypes.func
     // removeExpense: PropTypes.func.isRequired,
   };
 

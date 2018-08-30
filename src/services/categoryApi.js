@@ -5,27 +5,29 @@ const CATEGORY_URL = `${URL}/categories`;
 
 const getCategoryUrl = key => `${CATEGORY_URL}/${key}.json`;
 
-const pivot = obj => {
-  if(!obj) return [];
+// const pivot = obj => {
+//   if(!obj) return [];
 
-  return Object.keys(obj).map(key => {
-    const each = obj[key];
-    each.key = key;
-    return each;
-  });
-};
+//   return Object.keys(obj).map(key => {
+//     const each = obj[key];
+//     each.key = key;
+//     return each;
+//   });
+// };
 
 export const loadCategories = () => {
   return get(`${CATEGORY_URL}.json`)
     .then(response => {
-      const categories = pivot(response);
-      categories.forEach(category => {
-        category.expenses = pivot(category.expenses);
-      });
-      return categories;        
+      return response
+        ? Object.keys(response).map(key => {
+          const each = response[key];
+          each.key = key;
+          return each;
+        })
+        : [];
     });
 };
-//category service methods
+
 export const addCategory =  (category) => {
   if(category.name === 'van') {
     return Promise.reject('Unreasonable Category');
