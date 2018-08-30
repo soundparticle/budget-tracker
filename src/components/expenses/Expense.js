@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ExpenseDisplay from './ExpenseDisplay';
-import ExpenseForm from './ExpensesForm';
-import { updateExpense } from './expenseActions';
+import ExpenseForm from './ExpenseForm';
+import { update } from './expenseActions';
 
 class Expense extends Component {
 
@@ -13,41 +13,40 @@ class Expense extends Component {
 
   static propTypes = {
     expense: PropTypes.object,
-    updateExpense: PropTypes.func
+    update: PropTypes.func,
   };
-  
+
   handleEdit = () => {
     this.setState({ editing: true });
   };
-  
+
   handleComplete = expense => {
-    const { updateExpense } = this.props;
-    updateExpense(expense);
+    const { update } = this.props;
+    update(expense);
     this.handleEndEdit();
   };
-  
+
   handleEndEdit = () => {
     this.setState({ editing: false });
   };
+
   render() {
     const { editing } = this.state;
     const { expense } = this.props;
-
+    
     return (
       <li>
-        {editing || !!expense
+        {editing
           ? <ExpenseForm
             expense={expense}
             categoryId={expense.categoryId}
             onComplete={this.handleComplete}
             onCancel={this.handleEndEdit}
           />
-          :   
-          <ExpenseDisplay
+          : <ExpenseDisplay
             expense={expense}
             onEdit={this.handleEdit}
           />  
-          // <div></div> 
         }
       </li>
     );
@@ -55,6 +54,6 @@ class Expense extends Component {
 }
 
 export default connect(
-  null,
-  { updateExpense }
+  null, 
+  { update }
 )(Expense);
