@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addExpense, removeExpense } from './expenseActions';
 import { getExpensesByCategory } from './expenseReducers';
 import Expense from './Expense';
-import ExpensesForm from './ExpensesForm';
+import ExpenseForm from './ExpenseForm';
 // import styles from './Expenses.css';
 
 
@@ -43,7 +43,7 @@ class Expenses extends Component {
 
         <section>
           <h2>Add Expense</h2>
-          <ExpensesForm onComplete={this.handleExpenseAdd} label="Add" categoryId={categoryId}/>
+          <ExpenseForm onComplete={this.handleAddExpense} label="Add" categoryId={categoryId}/>
         </section>
       </div>
     );

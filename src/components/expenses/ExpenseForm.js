@@ -6,6 +6,7 @@ class ExpenseForm extends Component {
     editing: false,
     name: '',
     price: 0,
+    id: null
   };
 
   static propTypes = {
@@ -26,9 +27,10 @@ class ExpenseForm extends Component {
     const { name, price, id } = this.state;
     const expense = { name, price };
     if(id) expense.id = id;
+    if(this.props.expense) expense.categoryId = this.props.expense.categoryId;
 
     this.props.onComplete(expense);
-    this.setState({ name: '', price: '' });
+    this.setState({ name: '', price: 0 });
   };
   
   handleChange = ({ target }) => {

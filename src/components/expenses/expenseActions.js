@@ -3,7 +3,7 @@ import { addExpenseToCategory, updateExpenseCategory, removeExpenseCategory } fr
 import shortid from 'shortid';
 
 
-export const add = (categoryId, expense) => {
+export const addExpense = (categoryId, expense) => {
   expense.id = shortid.generate();
   expense.timestamp = new Date();
   expense.categoryId = categoryId;
@@ -13,12 +13,12 @@ export const add = (categoryId, expense) => {
   };
 };
 
-export const update = expense => ({
+export const updateExpense = expense => ({
   type: EXPENSE_UPDATE,
   payload: updateExpenseCategory(expense.categoryId, expense)
 });
 
-export const remove = expense => ({
+export const removeExpense = expense => ({
   type: EXPENSE_REMOVE,
   payload: removeExpenseCategory(expense.categoryId, expense.key).then(() => expense)
 });

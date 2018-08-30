@@ -15,7 +15,7 @@ class ExpenseDisplay extends Component {
   
   render() {
     const { expense, onEdit, removeExpense } = this.props;
-    console.log('** expense', expense);
+    // console.log('** expense', expense);
 
     return (
       <p>
