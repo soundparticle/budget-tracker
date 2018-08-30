@@ -14,7 +14,7 @@ class CategoryForm extends Component {
     onComplete: PropTypes.func.isRequired,
     onCancel: PropTypes.func
   };
-
+  
   componentDidMount() {
     const { category } = this.props;
     if(!category) return;

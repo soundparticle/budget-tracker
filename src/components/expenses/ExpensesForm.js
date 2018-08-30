@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 class ExpenseForm extends Component {
   state = {
     editing: false,
-    // key: null,
     name: '',
     price: 0,
   };

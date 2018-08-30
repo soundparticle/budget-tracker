@@ -5,9 +5,10 @@ export const CATEGORY_REMOVE = 'CATEGORY_REMOVE';
 
 export const EXPENSE_ADD = 'EXPENSE_ADD';
 export const EXPENSE_UPDATE = 'EXPENSE_UPDATE';
-export const EXPENSE_DELETE = 'EXPENSE_DELETE';
+export const EXPENSE_REMOVE = 'EXPENSE_REMOVE';
 
 export const getCategories = state => state.categories;
+
 export const getExpenses = state => state.expensesByCategory;
 export const getExpensesByCategory = (state, categoryId) => getExpenses(state)[categoryId];
 
@@ -29,50 +30,52 @@ export function categories(state = [], { type, payload }) {
   }
 }
 // Expenses by Category
-// export const getExpenses(state) = state.expensesByCategory;
+const convertObjectToArray = obj => {
+  return obj
+    ? Object.keys(obj).map(key => {
+      const each = obj[key];
+      each.key = key;
+      return each;
+    })
+    : [];
+};
 
-export function expensesByCategory(state = {}, { type, payload }) {
-  switch(type) {
+export function expensesByCategory(state = [], { type, payload }) {
+  switch(type){
     case CATEGORY_LOAD:
       return payload.reduce((map, category) => {
-        map[category.id] = category.expenses;
+        map[category.key] = convertObjectToArray(category.expenses);
         return map;
-      }, {});
+      },
+      {});
     case CATEGORY_ADD:
       return {
         ...state,
-        [payload.id]: []
+        [payload.key]: []
       };
-
-    // took id off payload
     case CATEGORY_REMOVE: {
-      // const { [payload]: ignore, ...rest } = state;
       const copy = { ...state };
-      delete copy[payload];
+      delete copy[payload.id];
       return copy;
     }
-    // added payload.expense
-    case EXPENSE_ADD: {
+    case EXPENSE_ADD: 
       return {
         ...state,
-        [payload.categoryId]: [
+        [payload.categoryId] : [
           ...state[payload.categoryId],
-          payload.expense
+          payload
         ]
       };
-    }
-    case EXPENSE_UPDATE: {
-      const copy = { ...state };
-      const update = copy[payload.categoryId].map(expense => expense.id === payload.id ? payload : expense);
-      copy[payload.categoryId] = update;
-      return copy;
-    }
-    case EXPENSE_DELETE: {
-      const copy = { ...state };
-      const update = copy[payload.categoryId].filter(expense => expense.id !== payload.id);
-      copy[payload.categoryId] = update;
-      return copy;
-    }
+    case EXPENSE_UPDATE: 
+      return { 
+        ...state,
+        [payload.categoryId]: state[payload.categoryId].map(expense => expense.id === payload.id ? payload : expense)
+      };
+    case EXPENSE_REMOVE: 
+      return {
+        ...state,
+        [payload.categoryId]: state[payload.categoryId].filter(expense => expense.key !== payload.key)
+      };
     default:
       return state;
   }

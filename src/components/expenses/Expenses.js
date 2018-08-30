@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addExpense, removeExpense } from '../categories/actions';
 import { getExpensesByCategory } from '../categories/reducers';
-import ExpenseDisplay from './ExpenseDisplay';
+import Expense from './Expense';
 import ExpensesForm from './ExpensesForm';
 // import styles from './Expenses.css';
 
@@ -14,33 +14,37 @@ export class Expenses extends Component {
     categoryId: PropTypes.string.isRequired,
     expenses: PropTypes.array,
     addExpense: PropTypes.func.isRequired,
-    removeExpense: PropTypes.func.isRequired,
+    // removeExpense: PropTypes.func.isRequired,
   };
 
-  handleAddExpense = data => {
-    this.props.addExpense(data);
-    // addExpense(categoryId, expense);
+  handleAddExpense = expense => {
+    const { addExpense, categoryId } = this.props;
+    addExpense(categoryId, expense);
   };
 
-  handleRemoveExpense = expense => {
-    this.props.removeExpense(expense);
-  };
+  // handleRemoveExpense = expense => {
+  //   this.props.removeExpense(expense);
+  // };
 
   render() {
     const { expenses, categoryId } = this.props;
+    // console.log('*** expenses disp', categoryId);
     if(!expenses) return null;
-
+    
     return (
       <div>
-        <h2>Expenses:</h2>
-        <ExpensesForm onComplete={this.handleExpenseAdd} label="Add" categoryId={categoryId}/>
-        <ul>
-          {expenses.map(expense => <ExpenseDisplay
+        <section>
+          {expenses.map(expense => <Expense
             key={expense.id}
             expense={expense}
-            onRemove={this.handleRemoveExpense}
-          />)}
-        </ul>
+            // onRemove={this.handleRemoveExpense}
+          />)}        
+        </section>
+
+        <section>
+          <h2>Add Expense</h2>
+          <ExpensesForm onComplete={this.handleExpenseAdd} label="Add" categoryId={categoryId}/>
+        </section>
       </div>
     );
   }

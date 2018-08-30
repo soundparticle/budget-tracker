@@ -67,9 +67,9 @@ describe('CRUD category actions', () => {
 });
 // Expense actions
 
-describe.skip('Expense actions', () => {
+describe('Expense actions', () => {
 
-  it('creates an add expense action', () => {
+  it.skip('creates an add expense action', () => {
     const parentId = 80;
     const data = { name: 'shoes', price: 60 };
 
@@ -77,6 +77,10 @@ describe.skip('Expense actions', () => {
     // console.log('*** EXPENSE_Add', EXPENSE_Add);
     expect(type).toBe(EXPENSE_ADD);
 
+    
+    
+    
+    
     // const { categoryId, expense } = payload;
     // expect(categoryId).toBe(parentId);
 
