@@ -3,9 +3,11 @@ import thunk from 'redux-thunk';
 import promiseMiddleware from './promise-middleware';
 import { categories } from '../components/categories/reducers';
 import { error, loading } from '../components/app/error-reducers';
+import { expensesByCategory } from '../components/categories/reducers';
 
 const rootReducer = combineReducers({
   categories,
+  expensesByCategory,
   error,
   loading 
 });
