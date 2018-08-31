@@ -24,9 +24,12 @@ export class CategoryDisplay extends Component {
     return (
       <div>
         <section className={styles.categoryDisplay}></section>
-        <strong>{category.name} gets a budget of {category.budget}</strong>
+        
+        <strong>{category.name} Budget = ${category.budget}</strong>
+        <br></br>
         <button name="Edit" onClick={onEdit}>✎</button>
         <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
+        <hr></hr>
         <Expenses categoryId={category.key}/>
       </div>
     );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Categories from './Categories';
 import CategoryForm from './CategoryForm';
-import { load, add, update } from './actions';
+import { load, add } from './actions';
 import { getCategories } from './reducers';
 
 class Dashboard extends Component {
@@ -37,10 +37,9 @@ class Dashboard extends Component {
 
         {categories && 
           <section>
-            <h3>Categories</h3>
+            <h3>Budget Categories</h3>
             <Categories
               categories={categories}
-              onUpdate={update}
             />
           </section>
         }

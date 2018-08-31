@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'react-redux';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeExpense, } from './expenseActions';
 
@@ -18,11 +18,17 @@ class ExpenseDisplay extends Component {
     // console.log('** expense', expense);
 
     return (
-      <p>
-        <strong>Expense:</strong>{expense.name}<strong>Price:</strong>${expense.price}
+      <div>
+        <h3>
+          <strong>Expense:<br></br> </strong>
+        </h3>
+        <li>
+          {expense.name}<strong> = </strong>${expense.price}
+        </li>
+        <br></br>
         <button name="Edit" onClick={onEdit}>✎</button>
         <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
-      </p>
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import ExpenseDisplay from './ExpenseDisplay';
+import ExpenseDisplay from './ExpenseDisplay';
 import ExpenseForm from './ExpenseForm';
 import { updateExpense } from './expenseActions';
 
@@ -32,10 +32,9 @@ class Expense extends Component {
   render() {
     const { editing } = this.state;
     const { expense } = this.props;
-    console.log('*** expense', expense);
     return (
-      <li>
-        {editing || !!expense
+      <div>
+        {editing 
           ? <ExpenseForm
             expense={expense}
             categoryId={expense.categoryId}
@@ -43,13 +42,13 @@ class Expense extends Component {
             onCancel={this.handleEndEdit}
           />
           :   
-          // <ExpenseDisplay
-          //   expense={expense}
-          //   onEdit={this.handleEdit}
-          // />  
-          <div></div> 
+          <ExpenseDisplay
+            expense={expense}
+            onEdit={this.handleEdit}
+          />  
+          // <div></div> 
         }
-      </li>
+      </div>
     );
   }
 }

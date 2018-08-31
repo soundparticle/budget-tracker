@@ -28,7 +28,7 @@ exports[`Category form renders add if no category prop 1`] = `
     <InputControl
       name="budget"
       onChange={[Function]}
-      value={0}
+      value=""
     >
       <p>
         <label>
@@ -38,7 +38,7 @@ exports[`Category form renders add if no category prop 1`] = `
             name="budget"
             onChange={[Function]}
             required={true}
-            value={0}
+            value=""
           />
         </label>
       </p>
@@ -99,7 +99,7 @@ exports[`Category form renders add if no category prop 2`] = `
     <InputControl
       name="budget"
       onChange={[Function]}
-      value={0}
+      value=""
     >
       <p>
         <label>
@@ -109,7 +109,7 @@ exports[`Category form renders add if no category prop 2`] = `
             name="budget"
             onChange={[Function]}
             required={true}
-            value={0}
+            value=""
           />
         </label>
       </p>
@@ -170,7 +170,7 @@ exports[`Category form renders add if no category prop 3`] = `
     <InputControl
       name="budget"
       onChange={[Function]}
-      value={0}
+      value=""
     >
       <p>
         <label>
@@ -180,7 +180,7 @@ exports[`Category form renders add if no category prop 3`] = `
             name="budget"
             onChange={[Function]}
             required={true}
-            value={0}
+            value=""
           />
         </label>
       </p>
