@@ -11,7 +11,7 @@ export class Categories extends Component {
 
   render() {
     const { categories } = this.props;
-    // if(!categories) return null;
+    if(!categories) return null;
 
     return (
       <ul>
