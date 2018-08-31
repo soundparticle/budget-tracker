@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import promiseMiddleware from './promise-middleware';
-import { categories } from '../components/categories/reducers';
 import { error, loading } from '../components/app/error-reducers';
+import { categories } from '../components/categories/reducers';
 import { expensesByCategory } from '../components/expenses/expenseReducers';
 
 const rootReducer = combineReducers({

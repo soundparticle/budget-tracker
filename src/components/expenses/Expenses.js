@@ -28,7 +28,7 @@ class Expenses extends Component {
 
   render() {
     const { expenses, categoryId } = this.props;
-    console.log('*** expenses disp', expenses);
+    // console.log('*** expenses disp', expenses);
     if(!expenses) return null;
     
     return (
