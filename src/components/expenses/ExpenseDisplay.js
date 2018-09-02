@@ -6,8 +6,6 @@ import { removeExpense, } from './expenseActions';
 class ExpenseDisplay extends Component {
 
   static propTypes = {
-    // TODO fix this proptype error
-
     expense: PropTypes.object,
     onEdit: PropTypes.func,
     removeExpense: PropTypes.func
@@ -15,7 +13,6 @@ class ExpenseDisplay extends Component {
   
   render() {
     const { expense, onEdit, removeExpense } = this.props;
-    // console.log('** expense', expense);
 
     return (
       <div>

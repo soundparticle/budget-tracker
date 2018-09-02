@@ -14,7 +14,6 @@ class Expenses extends Component {
     expenses: PropTypes.array,
     categoryId: PropTypes.string,
     addExpense: PropTypes.func,
-    // removeExpense: PropTypes.func.isRequired,
   };
 
   handleAddExpense = expense => {
@@ -22,13 +21,8 @@ class Expenses extends Component {
     addExpense(categoryId, expense);
   };
 
-  // handleRemoveExpense = expense => {
-  //   this.props.removeExpense(expense);
-  // };
-
   render() {
     const { expenses, categoryId } = this.props;
-    // console.log('*** expenses disp', expenses);
     if(!expenses) return null;
     
     return (
@@ -37,7 +31,6 @@ class Expenses extends Component {
           {expenses.map(expense => <Expense
             key={expense.id}
             expense={expense}
-            // onRemove={this.handleRemoveExpense}
           />)}        
         </section>
 
