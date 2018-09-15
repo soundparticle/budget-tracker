@@ -18,15 +18,16 @@ export class CategoryDisplay extends Component {
 
   render() {
     const { category, onEdit, remove } = this.props;
-    // const { name, budget, timestamp } = category;
 
-    // console.log('*** category disp', category);
     return (
       <div>
         <section className={styles.categoryDisplay}></section>
-        <strong>{category.name} gets a budget of {category.budget}</strong>
+
+        <strong>{category.name} Budget = ${category.budget}</strong>
+        <br></br>
         <button name="Edit" onClick={onEdit}>✎</button>
         <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
+        <hr></hr>
         <Expenses categoryId={category.key}/>
       </div>
     );

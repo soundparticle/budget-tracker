@@ -1,5 +1,5 @@
 :local(.header) {
-  background: greenyellow;
+  background: rgb(175, 255, 47);
   padding: 10px;
 
   .header-container {
@@ -22,13 +22,13 @@
   .search-container {
     padding: 5px 0;
   }
-
+  
   nav {
     ul {
       margin: 0;
       padding: 0;
     }
-  
+    
     li {
       list-style: none;
       display: inline-block;
@@ -41,15 +41,16 @@
       padding: 3px;
       box-sizing: border-box;
       border: 1px solid transparent;
-
+      margin-right: 50px;
+      
       &.active {
         color: white;
-        border: 1px solid white;
+        border: 1px solid floralwhite;
       }
-
+      
       &:not(.active):hover {
-        color: steelblue;
-        border: 1px solid steelblue;
+        color: darkorchid;
+        border: 1px solid greenyellow;
       }
       
 

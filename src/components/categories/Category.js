@@ -22,8 +22,8 @@ export class Category extends Component {
 
   handleComplete = category => {
     const { update } = this.props;
-    return update(category)
-      .then(() => this.handleEndEdit());
+    update(category);
+    this.handleEndEdit();
   };
 
   handleEndEdit = () => {
@@ -45,6 +45,7 @@ export class Category extends Component {
           : <CategoryDisplay
             category={category}
             onEdit={this.handleEdit}
+            onDelete={this.handleDelete}
           />
         }
       </li>

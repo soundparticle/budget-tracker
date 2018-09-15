@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addExpense } from './expenseActions';
 import { getExpensesByCategory } from './expenseReducers';
 import Expense from './Expense';
-import ExpensesForm from './ExpenseForm';
+import ExpenseForm from './ExpenseForm';
 // import styles from './Expenses.css';
 
 
@@ -13,7 +13,7 @@ class Expenses extends Component {
   static propTypes = {
     expenses: PropTypes.array,
     categoryId: PropTypes.string,
-    add: PropTypes.func
+    addExpense: PropTypes.func,
   };
 
   handleAddExpense = expense => {
@@ -26,19 +26,21 @@ class Expenses extends Component {
     if(!expenses) return null;
 
     return (
-      <div>
+      <ul>
+        {expenses &&
         <section>
-          {expenses.map(expense => <Expense
-            key={expense.id}
-            expense={expense}
-          />)}
-        </section>  
-        
+
+          {expenses.map(expense => {
+            return <Expense key={expense.key} expense={expense}/>;
+          })
+          }        
+        </section>
+        }
         <section>
-          <h2>Add an Expense</h2>
-          <ExpensesForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
-        </section>   
-      </div>
+          <h3>Add Expense</h3>
+          <ExpenseForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
+        </section>
+      </ul>
     );
   }
 }

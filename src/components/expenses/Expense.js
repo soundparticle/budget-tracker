@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ExpenseDisplay from './ExpenseDisplay';
 import ExpenseForm from './ExpenseForm';
+<<<<<<< HEAD
 import { update } from './expenseActions';
+=======
+import { updateExpense } from './expenseActions';
+>>>>>>> lab3-dev
 
 class Expense extends Component {
 
@@ -33,10 +37,9 @@ class Expense extends Component {
   render() {
     const { editing } = this.state;
     const { expense } = this.props;
-    
     return (
       <li>
-        {editing
+        {editing 
           ? <ExpenseForm
             expense={expense}
             categoryId={expense.categoryId}

@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import PropTypes from 'react-redux';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeExpense, } from './expenseActions';
 
 class ExpenseDisplay extends Component {
 
   static propTypes = {
-    expense: PropTypes.object,
-    onEdit: PropTypes.func,
-    remove: PropTypes.func
+    expense: PropTypes.object.isRequired,
+    onEdit: PropTypes.func.isRequired,
+    removeExpense: PropTypes.func.isRequired,
   };
 
   render() {
-    const { expense, onEdit, remove } = this.props;
+    const { expense, onEdit, removeExpense } = this.props;
 
     return (
-      <p>
-        <strong text-transformation="capitalize">Expense:</strong> {expense.name} <strong>Price:</strong> ${expense.price}
-        <button name="Edit" onClick={onEdit}>✎</button> 
-        <button name="Delete" onClick={() => remove(expense)}>🗑</button>
-      </p>
+      <section>
+        <h3>
+          <strong>Expense:<br></br> </strong>
+        </h3>
+        <li>
+          {expense.name}<strong> = </strong>${expense.price}
+        </li>
+        <br></br>
+        <button name="Edit" onClick={onEdit}>✎</button>
+        <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
+      </section>
     );
   }
 }

@@ -3,11 +3,17 @@ jest.mock('../../services/categoryApi', () => ({
   addCategory: jest.fn(),
   updateCategory: jest.fn(),
   removeCategory: jest.fn(),
+
+  addExpenseToCategory: jest.fn(),
+  updateExpenseCategory: jest.fn(),
+  removeExpenseCategory: jest.fn()
 }));
 
-import { load, add, update, remove, addExpense,  } from './actions';
-import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE, EXPENSE_ADD } from './reducers';
-import { loadCategories, addCategory, removeCategory, updateCategory } from '../../services/categoryApi';
+import { load, add, update, remove } from './actions';
+import { addExpense, updateExpense, removeExpense  } from '../expenses/expenseActions';
+import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
+import { EXPENSE_ADD, EXPENSE_UPDATE, EXPENSE_REMOVE  } from '../expenses/expenseReducers';
+import { loadCategories, addCategory, removeCategory, updateCategory, addExpenseToCategory, updateExpenseCategory, removeExpenseCategory } from '../../services/categoryApi';
 
 
 // Category actions
@@ -69,26 +75,43 @@ describe('CRUD category actions', () => {
 
 describe('Expense actions', () => {
 
-  it.skip('creates an add expense action', () => {
-    const parentId = 80;
-    const data = { name: 'shoes', price: 60 };
+  it('adds expense', () => {
+    const expense = { name: 'guitar' };
+    const categoryId = '123';
+    const promise = Promise.resolve();
+    addExpenseToCategory.mockReturnValueOnce(promise);
 
-    const { type } = addExpense(parentId, data);
-    // console.log('*** EXPENSE_Add', EXPENSE_Add);
+    const { type, payload } = addExpense(categoryId, expense);
     expect(type).toBe(EXPENSE_ADD);
+    expect(payload).toBe(promise);
+    expect(addExpenseToCategory.mock.calls.length).toBe(1);
+    expect(addExpenseToCategory.mock.calls[0][0]).toBe(expense);
+  });
 
-    
-    
-    
-    
-    // const { categoryId, expense } = payload;
-    // expect(categoryId).toBe(parentId);
+  it('updates expense', () => {
+    const expense = { name: 'strings' };
+    const promise = Promise.resolve();
+    updateExpenseCategory.mockReturnValueOnce(promise);
 
-    // const { id, timestamp, name, price } = expense;
-    // expect(id).toBeTruthy();
-    // expect(expense.categoryId).toBe(parentId);
-    // expect(timestamp).toBeTruthy();
-    // expect(name).toBe(data.name);
-    // expect(price).toBe(data.price);
+    const { type, payload } = updateExpense(expense);
+    expect(type).toBe(EXPENSE_UPDATE);
+    expect(payload).toBe(promise);
+    expect(updateExpenseCategory.mock.calls.length).toBe(1);
+    expect(updateExpenseCategory.mock.calls[0][0]).toBe(expense);
+  });
+
+  it('removes expense', () => {
+    const promise = Promise.resolve();
+    removeExpenseCategory.mockReturnValueOnce(promise);
+    const expense = { name: 'cables' };
+
+    const { type, payload } = removeExpense(expense);
+    expect(type).toBe(EXPENSE_REMOVE);
+    expect(removeExpenseCategory.mock.calls.length).toBe(1);
+    expect(removeExpenseCategory.mock.calls[0][0]).toBe(expense);
+
+    return payload.then(deleted => {
+      expect(deleted).toBe(expense);
+    });
   });
 });
