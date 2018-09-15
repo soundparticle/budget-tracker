@@ -5,8 +5,6 @@ import { addExpense } from './expenseActions';
 import { getExpensesByCategory } from './expenseReducers';
 import Expense from './Expense';
 import ExpenseForm from './ExpenseForm';
-// import styles from './Expenses.css';
-
 
 class Expenses extends Component {
 

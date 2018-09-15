@@ -63,13 +63,4 @@ class CategoryForm extends Component {
   }
 }
 
-// const InputControl = (props) => (
-//   <p>
-//     <label>
-//       {props.name}:
-//       <input {...props} required/>
-//     </label>
-//   </p>
-// );
-
 export default CategoryForm;
