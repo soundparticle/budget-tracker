@@ -7,42 +7,22 @@ exports[`Category form renders add if no category prop 1`] = `
   <form
     onSubmit={[Function]}
   >
-    <InputControl
-      name="name"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          name
-          :
-          <input
-            name="name"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
-    <InputControl
-      name="budget"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          budget
-          :
-          <input
-            name="budget"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
+    <label>
+      Name:
+      <input
+        name="name"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      Budget:
+      <input
+        name="budget"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
     <p>
       <button
         type="submit"
@@ -78,42 +58,22 @@ exports[`Category form renders add if no category prop 2`] = `
   <form
     onSubmit={[Function]}
   >
-    <InputControl
-      name="name"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          name
-          :
-          <input
-            name="name"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
-    <InputControl
-      name="budget"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          budget
-          :
-          <input
-            name="budget"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
+    <label>
+      Name:
+      <input
+        name="name"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      Budget:
+      <input
+        name="budget"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
     <p>
       <button
         type="submit"
@@ -149,42 +109,22 @@ exports[`Category form renders add if no category prop 3`] = `
   <form
     onSubmit={[Function]}
   >
-    <InputControl
-      name="name"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          name
-          :
-          <input
-            name="name"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
-    <InputControl
-      name="budget"
-      onChange={[Function]}
-      value=""
-    >
-      <p>
-        <label>
-          budget
-          :
-          <input
-            name="budget"
-            onChange={[Function]}
-            required={true}
-            value=""
-          />
-        </label>
-      </p>
-    </InputControl>
+    <label>
+      Name:
+      <input
+        name="name"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      Budget:
+      <input
+        name="budget"
+        onChange={[Function]}
+        value=""
+      />
+    </label>
     <p>
       <button
         type="submit"

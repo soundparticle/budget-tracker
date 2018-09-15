@@ -7,6 +7,8 @@ class CategoryForm extends Component {
     key: null,
     name: '',
     budget: '',    
+    expenses: [],
+    category: null,
   };
 
   static propTypes = {
@@ -42,8 +44,16 @@ class CategoryForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <InputControl name="name" value={name} onChange={this.handleChange}/>
-        <InputControl name="budget" value={budget} onChange={this.handleChange}/>
+        {/* <InputControl name="name" value={name} onChange={this.handleChange}/>
+        <InputControl name="budget" value={budget} onChange={this.handleChange}/> */}
+        <label>
+          Name:
+          <input name="name" value={name} onChange={this.handleChange}/>
+        </label>
+        <label>
+          Budget:
+          <input name="budget" value={budget} onChange={this.handleChange}/>
+        </label>
         <p>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
           {key && <button type="button" onClick={onCancel}>Cancel</button>}
@@ -53,13 +63,13 @@ class CategoryForm extends Component {
   }
 }
 
-const InputControl = (props) => (
-  <p>
-    <label>
-      {props.name}:
-      <input {...props} required/>
-    </label>
-  </p>
-);
+// const InputControl = (props) => (
+//   <p>
+//     <label>
+//       {props.name}:
+//       <input {...props} required/>
+//     </label>
+//   </p>
+// );
 
 export default CategoryForm;

@@ -5,7 +5,7 @@ import { addExpenseToCategory, updateExpenseCategory, removeExpenseCategory } fr
 
 export const addExpense = (categoryId, expense) => {
   // expense.id = shortid.generate();
-  expense.timestamp = new Date();
+  expense.timestamp = (new Date()).toLocaleString();
   expense.categoryId = categoryId;
   return {
     type: EXPENSE_ADD,
