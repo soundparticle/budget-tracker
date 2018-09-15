@@ -6,16 +6,16 @@ import { removeExpense, } from './expenseActions';
 class ExpenseDisplay extends Component {
 
   static propTypes = {
-    expense: PropTypes.object,
-    onEdit: PropTypes.func,
-    removeExpense: PropTypes.func
+    expense: PropTypes.object.isRequired,
+    onEdit: PropTypes.func.isRequired,
+    removeExpense: PropTypes.func.isRequired,
   };
   
   render() {
     const { expense, onEdit, removeExpense } = this.props;
 
     return (
-      <div>
+      <section>
         <h3>
           <strong>Expense:<br></br> </strong>
         </h3>
@@ -25,7 +25,7 @@ class ExpenseDisplay extends Component {
         <br></br>
         <button name="Edit" onClick={onEdit}>✎</button>
         <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
-      </div>
+      </section>
     );
   }
 }

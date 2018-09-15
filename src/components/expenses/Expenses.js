@@ -26,28 +26,28 @@ class Expenses extends Component {
     if(!expenses) return null;
     
     return (
-      <div>
+      <ul>
+        {expenses &&
         <section>
-          {expenses.map(expense => <Expense
-            key={expense.id}
-            expense={expense}
-          />)}        
-        </section>
 
+          {expenses.map(expense => {
+            return <Expense key={expense.key} expense={expense}/>;
+          })
+          }        
+        </section>
+        }
         <section>
           <h3>Add Expense</h3>
           <ExpenseForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
         </section>
-      </div>
+      </ul>
     );
   }
 }
 
 export default connect(
-  (state, { categoryId }) => {
-    return {
-      expenses: getExpensesByCategory(state, categoryId)
-    };
-  },
+  (state, { categoryId }) => ({
+    expenses: getExpensesByCategory(state, categoryId)
+  }),
   { addExpense }
 )(Expenses);

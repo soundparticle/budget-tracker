@@ -6,7 +6,7 @@ class CategoryForm extends Component {
     editing: false,
     key: null,
     name: '',
-    budget: '',
+    budget: '',    
   };
 
   static propTypes = {

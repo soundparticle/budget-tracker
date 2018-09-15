@@ -33,7 +33,7 @@ class Expense extends Component {
     const { editing } = this.state;
     const { expense } = this.props;
     return (
-      <div>
+      <li>
         {editing 
           ? <ExpenseForm
             expense={expense}
@@ -48,7 +48,7 @@ class Expense extends Component {
           />  
           // <div></div> 
         }
-      </div>
+      </li>
     );
   }
 }
