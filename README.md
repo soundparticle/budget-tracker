@@ -4,5 +4,5 @@ This is a bare-bones app to help the user track their budget. You can add a budg
 
 ## This app uses:
 Jest: for TDD testing(reducers/actions).
-React/Redux
+React/Redux,
 NodeJS
