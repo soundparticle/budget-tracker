@@ -46,6 +46,4 @@ describe('Category form', () => {
         expect(toJSON(wrapper)).toMatchSnapshot();
       });
   });
-
-
 });

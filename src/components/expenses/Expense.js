@@ -46,7 +46,6 @@ class Expense extends Component {
             expense={expense}
             onEdit={this.handleEdit}
           />  
-          // <div></div> 
         }
       </li>
     );

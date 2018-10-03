@@ -15,7 +15,6 @@ import { CATEGORY_LOAD, CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '.
 import { EXPENSE_ADD, EXPENSE_UPDATE, EXPENSE_REMOVE  } from '../expenses/expenseReducers';
 import { loadCategories, addCategory, removeCategory, updateCategory, addExpenseToCategory, updateExpenseCategory, removeExpenseCategory } from '../../services/categoryApi';
 
-
 // Category actions
 describe('CRUD category actions', () => {
 
@@ -72,7 +71,6 @@ describe('CRUD category actions', () => {
 
 });
 // Expense actions
-
 describe('Expense actions', () => {
 
   it('adds expense', () => {

@@ -8,13 +8,11 @@ import styles from './CategoryDisplay.css';
 
 export class CategoryDisplay extends Component {
 
-
   static propTypes = {
     category: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
     remove: PropTypes.func.isRequired
   };
-
 
   render() {
     const { category, onEdit, remove } = this.props;

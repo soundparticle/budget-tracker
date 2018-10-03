@@ -44,8 +44,6 @@ class CategoryForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        {/* <InputControl name="name" value={name} onChange={this.handleChange}/>
-        <InputControl name="budget" value={budget} onChange={this.handleChange}/> */}
         <label>
           Name:
           <input name="name" value={name} onChange={this.handleChange}/>
