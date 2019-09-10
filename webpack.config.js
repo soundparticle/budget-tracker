@@ -2,7 +2,7 @@
 const { resolve } = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const buildDir = 'docs';
 const path = resolve(__dirname, buildDir);
@@ -21,13 +21,20 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: `./${buildDir}`,
-    historyApiFallback: true,
+    // historyApiFallback: true,
+    historyApiFallback: {
+      index: '[path/to/index]',
+      rewrites: [
+        // shows favicon  
+        { from: /favicon.ico/, to: '[path/to/favicon]' }
+      ]
+    }
   },
   plugins: [
     // add plugins
     new CleanPlugin(`${path}/bundle.*.js`),
     new HtmlPlugin({ template: './src/index.html' }),
-    // new CopyWebpackPlugin([{ from: './src/sprites', to: 'sprites' }])
+    new CopyWebpackPlugin([{ from: './favicon.ico' }])
   ],
   module: {
     rules: [

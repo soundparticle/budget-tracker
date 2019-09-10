@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+
+
 class Home extends Component {
   render() { 
     return (
       <div>
-        <h2>Home Page</h2>
-        <p>edit lists of categories</p>
+        <h2>Welcome To Budget Tracker</h2>
+        <p>Edit category list</p>
       </div>
     );
   }
