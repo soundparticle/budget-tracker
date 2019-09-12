@@ -1,0 +1,7 @@
+:local(.home) {
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+}

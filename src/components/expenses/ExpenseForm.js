@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './ExpenseForm.css';
 
 class ExpenseForm extends Component {
   state = {
@@ -53,10 +54,13 @@ class ExpenseForm extends Component {
            Price:
           <input name="price" value={price} onChange={this.handleChange}/>
         </label>
-        <p>
-          <button type="submit">{ key ? 'Update' : 'Add' }</button>
-          {key && <button type="button" onClick={onCancel}>Cancel</button>}
-        </p>
+
+        <div className={styles.formButtons}>
+          <p>
+            <button type="submit">{ key ? 'Update' : 'Add' }</button>
+            {key && <button type="button" onClick={onCancel}>Cancel</button>}
+          </p>
+        </div>
       </form>
     );
   }

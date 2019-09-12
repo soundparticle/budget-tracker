@@ -1,14 +1,27 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+
   font-family: "Comic Sans MS", cursive, sans-serif;
-  color: rgb(26, 13, 65);
+  background-color: rgb(232, 243, 202); 
+  ;
   margin: 0;
 }
 
 main {
+  display: flex;
+  justify-content: center;
   padding: 8px;
-  background: rgb(232, 243, 202); 
+  height: 100vh;
 }
 
-* {
-  box-sizing: border-box;
+h2 {
+  text-align: center;
+}
+
+button {
+  align-items: center;
 }

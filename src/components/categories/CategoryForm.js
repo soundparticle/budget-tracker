@@ -52,10 +52,13 @@ class CategoryForm extends Component {
           Budget:
           <input name="budget" value={budget} onChange={this.handleChange}/>
         </label>
-        <p>
-          <button type="submit">{ key ? 'Update' : 'Add' }</button>
-          {key && <button type="button" onClick={onCancel}>Cancel</button>}
-        </p>
+        
+        <div>
+          <p>
+            <button type="submit">{ key ? 'Update' : 'Add' }</button>
+            {key && <button type="button" onClick={onCancel}>Cancel</button>}
+          </p>
+        </div>
       </form>
     );
   }

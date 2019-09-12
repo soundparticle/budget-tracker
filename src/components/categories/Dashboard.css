@@ -1,0 +1,21 @@
+
+:local(.dashboard) {
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
+  
+  section {
+    // display: flex;
+    // justify-content: center;
+
+    border-style: solid;
+    border-color: yellow;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}

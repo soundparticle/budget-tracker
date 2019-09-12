@@ -24,21 +24,23 @@ class Expenses extends Component {
     if(!expenses) return null;
     
     return (
-      <ul>
-        {expenses &&
-        <section>
-
-          {expenses.map(expense => {
-            return <Expense key={expense.key} expense={expense}/>;
-          })
-          }        
-        </section>
-        }
+      <div>
         <section>
           <h3>Add Expense</h3>
           <ExpenseForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
         </section>
-      </ul>
+        <ul>
+          
+          {/* expenses && */}
+          <section>
+            {
+              expenses.map(expense => {
+                return <Expense key={expense.key} expense={expense}/>;
+              })
+            }        
+          </section>
+        </ul>
+      </div>
     );
   }
 }

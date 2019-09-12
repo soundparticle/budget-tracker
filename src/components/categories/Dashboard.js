@@ -7,6 +7,9 @@ import CategoryForm from './CategoryForm';
 import { load, add, update } from './actions';
 import { getCategories } from './reducers';
 
+import styles from './Dashboard.css';
+
+
 class Dashboard extends Component {
 
   static propTypes = {
@@ -23,19 +26,24 @@ class Dashboard extends Component {
     const { categories, add } = this.props;
 
     return (
-      <div>
-        <section>
-          <h3>Add an Category</h3>
+      <div className={styles.dashboard}>
+        <section className="category-wrapper">
+          <h3>Add Budget Category</h3>
           <CategoryForm onComplete={add}/>
         </section>
-
+        <section>
+          
+        </section>
         {categories && 
-          <section>
+          <section className="category-wrapper">
+            <hr/>
             <h3>Budget Categories</h3>
-            <Categories
-              categories={categories}
-              onUpdate={update}
-            />
+            <section>
+              <Categories
+                categories={categories}
+                onUpdate={update}
+              />
+            </section>
           </section>
         }
       </div>

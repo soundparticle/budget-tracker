@@ -19,14 +19,14 @@ export class CategoryDisplay extends Component {
 
     return (
       <div>
-        <section className={styles.categoryDisplay}></section>
-
-        <strong>{category.name} Budget = ${category.budget}</strong>
-        <br></br>
-        <button name="Edit" onClick={onEdit}>✎</button>
-        <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
-        <hr></hr>
-        <Expenses categoryId={category.key}/>
+        <section className={styles.categoryDisplay}>
+          <strong>{category.name} = ${category.budget}</strong>
+          <br></br>
+          <button name="Edit" onClick={onEdit}>✎</button>
+          <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
+          <hr></hr>
+          <Expenses categoryId={category.key}/>
+        </section>
       </div>
     );
   }

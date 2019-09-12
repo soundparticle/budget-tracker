@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import budgetImage from '../../assets/budget-image.png';
+
+import styles from './Home.css';
+
 
 
 
 class Home extends Component {
   render() { 
     return (
-      <div>
-        <h2>Welcome To Budget Tracker</h2>
-        <p>Edit category list</p>
+      <div id={styles.homeContainer}>
+        <h2>Its budget time!</h2>
+        {/* <p>Edit category list</p> */}
+        <img src={budgetImage}></img>
       </div>
     );
   }

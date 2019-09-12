@@ -31,9 +31,8 @@ class Header extends Component {
                 <NavLink exact activeClassName="active" to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink exact activeClassName="active" to="/categories">Budget</NavLink>
+                <NavLink exact activeClassName="active" to="/categories">My Budget</NavLink>
               </li>
-
             </ul> 
           </nav>
         </section>
