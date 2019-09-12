@@ -4,10 +4,8 @@
 }
 
 body {
-
   font-family: "Comic Sans MS", cursive, sans-serif;
   background-color: rgb(232, 243, 202); 
-  ;
   margin: 0;
 }
 
@@ -18,7 +16,7 @@ main {
   height: 100vh;
 }
 
-h2 {
+h2, h5 {
   text-align: center;
 }
 
