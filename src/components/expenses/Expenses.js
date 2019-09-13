@@ -6,6 +6,8 @@ import { getExpensesByCategory } from './expenseReducers';
 import Expense from './Expense';
 import ExpenseForm from './ExpenseForm';
 
+import styles from './Expenses.css';
+
 class Expenses extends Component {
 
   static propTypes = {
@@ -24,22 +26,23 @@ class Expenses extends Component {
     if(!expenses) return null;
     
     return (
-      <div>
+      <div className={styles.expenses} style={{ borderColor: 'green', borderStyle: 'solid' }}>
         <section>
+          <p>EXPENSE DISPLAY</p>
           <h3>Add Expense</h3>
           <ExpenseForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
         </section>
-        <ul>
-          
-          {/* expenses && */}
-          <section>
+        {/* expenses && */}
+        <section>
+          <ul>
             {
               expenses.map(expense => {
                 return <Expense key={expense.key} expense={expense}/>;
               })
-            }        
-          </section>
-        </ul>
+            }
+            {/* <p>END CAT DISPLAY</p>         */}
+          </ul>
+        </section>
       </div>
     );
   }

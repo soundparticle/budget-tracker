@@ -1,10 +1,10 @@
 :local(.app) {
   // display: grid;
   // grid-template-rows: 150px 1fr;
-  // height: 100vh;
+  height: 100vh;
   
   main {
-    // position: relative;
+    position: relative;
     border-style: none;
   }
 }

@@ -13,9 +13,10 @@
     }
   
     h1 {
-      font-size: 14pt;
+      font-size: 22pt;
       color: white;
       text-shadow: 1px 1px 1px black;
+      padding-bottom: 7px;
     }
   }
 

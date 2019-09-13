@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeExpense, } from './expenseActions';
 
+// import styles from ''
+
 class ExpenseDisplay extends Component {
 
   static propTypes = {
@@ -15,16 +17,17 @@ class ExpenseDisplay extends Component {
     const { expense, onEdit, removeExpense } = this.props;
 
     return (
-      <section>
+      <section styles={{ color: 'pink', borderStyle: 'solid', borderWidth: 3 }}>
         <h3>
-          <strong>Expense:<br></br> </strong>
+          <strong>Expenses:<br></br> </strong>
         </h3>
-        <li>
+        {/* <li>
           {expense.name}<strong> = </strong>${expense.price}
-        </li>
+        </li> */}
         <br></br>
         <button name="Edit" onClick={onEdit}>✎</button>
         <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
+        <hr/>
       </section>
     );
   }

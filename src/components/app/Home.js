@@ -1,4 +1,6 @@
+  
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import budgetImage from '../../assets/budget-image.png';
 
 
@@ -9,7 +11,9 @@ class Home extends Component {
         <h2>Its budget time!</h2>
         <section>
           <h5>Clink below to begin</h5>
-          <img src={budgetImage}></img>
+          <NavLink exact activeClassName="active" to="/categories">
+            <img src={budgetImage}></img>
+          </NavLink>
         </section>
       </div>
     );

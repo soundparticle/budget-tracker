@@ -45,7 +45,8 @@ class ExpenseForm extends Component {
     const { onCancel } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} style={{ borderStyle: 'solid' }}>
+        <p>EXPENSE FORM</p>
         <label>
             Name:
           <input name="name" value={name} onChange={this.handleChange}/>

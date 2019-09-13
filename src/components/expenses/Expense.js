@@ -33,21 +33,23 @@ class Expense extends Component {
     const { editing } = this.state;
     const { expense } = this.props;
     return (
-      <li>
-        {editing 
-          ? <ExpenseForm
-            expense={expense}
-            categoryId={expense.categoryId}
-            onComplete={this.handleComplete}
-            onCancel={this.handleEndEdit}
-          />
-          :   
-          <ExpenseDisplay
-            expense={expense}
-            onEdit={this.handleEdit}
-          />  
-        }
-      </li>
+      <section>
+        <li>
+          {editing 
+            ? <ExpenseForm
+              expense={expense}
+              categoryId={expense.categoryId}
+              onComplete={this.handleComplete}
+              onCancel={this.handleEndEdit}
+            />
+            :   
+            <ExpenseDisplay
+              expense={expense}
+              onEdit={this.handleEdit}
+            />  
+          }
+        </li>
+      </section>
     );
   }
 }
