@@ -1,0 +1,5 @@
+:local(.expenses) {
+  li {
+    list-style-type: none;
+  }
+}
