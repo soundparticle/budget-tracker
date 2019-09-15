@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeExpense, } from './expenseActions';
 
-// import styles from ''
+import styles from './ExpenseDisplay.css';
 
 class ExpenseDisplay extends Component {
 
@@ -17,7 +17,7 @@ class ExpenseDisplay extends Component {
     const { expense, onEdit, removeExpense } = this.props;
 
     return (
-      <section styles={{ color: 'pink', borderStyle: 'solid', borderWidth: 3 }}>
+      <section className={styles.expensedisplay} styles={{ color: 'pink', borderStyle: 'solid', borderWidth: 3 }}>
         <h3>
           <strong>Expenses:<br></br> </strong>
         </h3>

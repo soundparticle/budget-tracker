@@ -1,4 +1,5 @@
 :local(.expenseform) {
+  // border-style: none;
   
   .formButtons {
     text-align: center;

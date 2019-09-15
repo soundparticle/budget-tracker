@@ -1,5 +1,15 @@
+
 :local(.expenses) {
+  display: block;
+  // border-color: green;
+  // border-style: solid;
+
   li {
     list-style-type: none;
+  }
+
+  section {
+    display: flex;
+    // justify-content: center;
   }
 }
