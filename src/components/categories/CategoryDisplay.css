@@ -1,0 +1,11 @@
+
+:local(.categorydisplay) {
+  // border-style: solid;
+  // border-color: red;
+  
+  .category-list {
+
+    // border-color: orange; 
+    border-style: none;   
+  }
+}

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { remove } from './actions';
-import Expenses from '../expenses/Expenses';
+// import Expenses from '../expenses/Expenses';
+
 import styles from './CategoryDisplay.css';
 
 
@@ -18,27 +19,28 @@ export class CategoryDisplay extends Component {
     const { category, onEdit, remove } = this.props;
 
     return (
-      <div>
-        <section className={styles.categoryDisplay} style={{ borderColor: 'orange', borderStyle: 'solid' }}>
+      <div className={styles.categorydisplay}>
+        <section className="category-list">
           {/* <p style={{ color: 'blue' }}>
             CAT DISPLAY
           </p> */}
           <section>
             <li style={{ listStyleType: 'disc' }}>
               <strong>{category.name} = ${category.budget}</strong>
+              <button name="Edit" onClick={onEdit}>✎</button>
+              <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
             </li>
           </section>
-          <br></br>
-          <button name="Edit" onClick={onEdit}>✎</button>
-          <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
+          {/* <br></br> */}
           {/* <p>
             END CAT DISPLAY
           </p> */}
         </section>
-        <hr></hr>
-        <section>
+        
+        {/* <hr></hr> */}
+        {/* <section>
           <Expenses categoryId={category.key}/>
-        </section>
+        </section> */}
       </div>
     );
   }

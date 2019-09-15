@@ -26,7 +26,7 @@ class Expenses extends Component {
     if(!expenses) return null;
     
     return (
-      <div className={styles.expenses} style={{ borderColor: 'green', borderStyle: 'solid' }}>
+      <div className={styles.expenses} >
         <h3>Add Expense</h3>
         <section>
           {/* <p>EXPENSE DISPLAY</p> */}

@@ -24,9 +24,13 @@ p {
   color: blue;
 }
 
+strong {
+  padding: 10px;
+}
+
 button {
-  padding: 0px;
-  margin: 0;
+  padding: 3px;
+  margin: 3px;
 }
 
 form {
