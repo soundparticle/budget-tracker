@@ -46,7 +46,7 @@ class ExpenseForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} style={{ borderStyle: 'solid' }}>
-        <p>EXPENSE FORM</p>
+        {/* <p>EXPENSE FORM</p> */}
         <label>
             Name:
           <input name="name" value={name} onChange={this.handleChange}/>

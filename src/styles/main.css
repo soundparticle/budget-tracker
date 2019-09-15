@@ -23,6 +23,17 @@ h2, h5 {
 p {
   color: blue;
 }
+
 button {
-  align-items: center;
+  padding: 0px;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  margin:  0px;
 }

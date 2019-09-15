@@ -1,5 +1,13 @@
+
 :local(.expenses) {
+  display: block;
+
   li {
     list-style-type: none;
+  }
+
+  section {
+    display: flex;
+    // justify-content: center;
   }
 }

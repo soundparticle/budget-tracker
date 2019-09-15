@@ -27,9 +27,9 @@ class Expenses extends Component {
     
     return (
       <div className={styles.expenses} style={{ borderColor: 'green', borderStyle: 'solid' }}>
+        <h3>Add Expense</h3>
         <section>
-          <p>EXPENSE DISPLAY</p>
-          <h3>Add Expense</h3>
+          {/* <p>EXPENSE DISPLAY</p> */}
           <ExpenseForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
         </section>
         {/* expenses && */}

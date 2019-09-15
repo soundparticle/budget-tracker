@@ -1,7 +1,12 @@
 :local(.home) {
-
+  
   h5 {
     text-align: center;
-    font-size: 30px;
+    font-size: 15px;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
   }
 }
