@@ -17,7 +17,7 @@
     "start": "webpack-dev-server --hot --open --mode development"
   },
   "keywords": [],
-  "author": "Antreo Pukay <acrosswalker@yahoo.com> (https://github.com/soundparticle)`",
+  "author": "Antreo Pukay <acrosswalker@yahoo.com> (https://github.com/soundparticle)",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.1.1",
