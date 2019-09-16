@@ -21,14 +21,14 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: `./${buildDir}`,
-    historyApiFallback: true,
-    // historyApiFallback: {
-    //   index: '[path/to/index]',
-    //   rewrites: [
-    //     // shows favicon  
-    //     { from: /favicon.ico/, to: '[path/to/favicon]' }
-    //   ]
-    // }
+    // historyApiFallback: true,
+    historyApiFallback: {
+      index: '[path/to/index]',
+      rewrites: [
+        // shows favicon  
+        { from: /favicon.ico/, to: '[path/to/favicon]' }
+      ]
+    }
   },
   plugins: [
     // add plugins
