@@ -18,16 +18,19 @@ class ExpenseDisplay extends Component {
 
     return (
       <section className={styles.expensedisplay} styles={{ color: 'pink', borderStyle: 'solid', borderWidth: 3 }}>
-        <h3>
-          <strong>Expenses:<br></br> </strong>
-        </h3>
-        {/* <li>
-          {expense.name}<strong> = </strong>${expense.price}
-        </li> */}
-        <br></br>
-        <button name="Edit" onClick={onEdit}>✎</button>
-        <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
-        <hr/>
+        <section>
+          <h3>
+            <strong>Expenses:</strong>
+          </h3>
+          <hr/>
+        </section>
+        <section>
+          <li>
+            {expense.name} = ${expense.price}
+            <button name="Edit" onClick={onEdit}>✎</button>
+            <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
+          </li>
+        </section>
       </section>
     );
   }

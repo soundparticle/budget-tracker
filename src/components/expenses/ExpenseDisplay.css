@@ -1,1 +1,8 @@
+:local(.expensedisplay) {
+  display: block;
 
+  li {
+    // display: block;
+    color: red;
+  }
+}

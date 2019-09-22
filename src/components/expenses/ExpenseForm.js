@@ -47,7 +47,7 @@ class ExpenseForm extends Component {
     const { onCancel } = this.props;
 
     return (
-      <form className={styles.expenseform} onSubmit={this.handleSubmit}>
+      <form  onSubmit={this.handleSubmit}>
         {/* <p>EXPENSE FORM</p> */}
         <label>
             Name:
@@ -58,11 +58,11 @@ class ExpenseForm extends Component {
           <input name="price" value={price} onChange={this.handleChange}/>
         </label>
 
-        <div className={styles.formButtons}>
-          <p>
-            <button type="submit">{ key ? 'Update' : 'Add' }</button>
-            {key && <button type="button" onClick={onCancel}>Cancel</button>}
-          </p>
+        <span className={styles.formButtons}>
+          <button type="submit">{ key ? 'Update' : 'Add' }</button>
+          {key && <button type="button" onClick={onCancel}>Cancel</button>}
+        </span>
+        <div >
         </div>
       </form>
     );

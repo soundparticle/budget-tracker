@@ -14,14 +14,16 @@ export class Categories extends Component {
     if(!categories) return null;
 
     return (
-      <ul>
-        {categories.map(category => (
-          <Category
-            key={category.key}
-            category={category}
-          />
-        ))}
-      </ul>
+      <section>
+        <ul>
+          {categories.map(category => (
+            <Category
+              key={category.key}
+              category={category}
+            />
+          ))}
+        </ul>
+      </section>
     );
   }
 }

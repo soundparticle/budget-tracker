@@ -5,6 +5,8 @@ import ExpenseDisplay from './ExpenseDisplay';
 import ExpenseForm from './ExpenseForm';
 import { updateExpense } from './expenseActions';
 
+import styles from './Expense.css';
+
 class Expense extends Component {
 
   state = {
@@ -33,7 +35,7 @@ class Expense extends Component {
     const { editing } = this.state;
     const { expense } = this.props;
     return (
-      <section>
+      <section className={styles.expense}>
         <li>
           {editing 
             ? <ExpenseForm
