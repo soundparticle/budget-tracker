@@ -1,12 +1,9 @@
 
 :local(.categorydisplay) {
   display: inline;
-  // border-style: solid;
-  // border-color: red;
-  
-  .category-list {
 
-    // border-color: orange; 
+  .category-list {
+    padding: 15px;
     border-style: none;   
   }
 }

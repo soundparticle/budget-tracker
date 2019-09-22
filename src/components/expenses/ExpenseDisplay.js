@@ -17,13 +17,7 @@ class ExpenseDisplay extends Component {
     const { expense, onEdit, removeExpense } = this.props;
 
     return (
-      <section className={styles.expensedisplay} styles={{ color: 'pink', borderStyle: 'solid', borderWidth: 3 }}>
-        <section>
-          <h3>
-            <strong>Expenses:</strong>
-          </h3>
-          <hr/>
-        </section>
+      <section className={styles.expensedisplay}>
         <section>
           <li>
             {expense.name} = ${expense.price}

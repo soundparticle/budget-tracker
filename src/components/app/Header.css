@@ -1,6 +1,7 @@
 :local(.header) {
-  background: rgb(175, 255, 47);
+  background: rgb(109, 255, 47);
   padding: 10px;
+  text-shadow: 1px 1px 1px black;
 
   .header-container {
     display: flex;
@@ -13,9 +14,8 @@
     }
   
     h1 {
-      font-size: 22pt;
+      font-size: 26pt;
       color: white;
-      text-shadow: 1px 1px 1px black;
       padding-bottom: 7px;
     }
   }
@@ -31,13 +31,13 @@
     }
     
     li {
-      list-style: none;
       display: inline-block;
       margin-left: 15px;
     }
     
     a {
       text-decoration: none;
+      font-size: 18px;;
       color: black;
       padding: 3px;
       box-sizing: border-box;

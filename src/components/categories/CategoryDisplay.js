@@ -25,7 +25,7 @@ export class CategoryDisplay extends Component {
             CAT DISPLAY
           </p> */}
           <section>
-            <li style={{ listStyleType: 'disc' }}>
+            <li>
               <strong>{category.name} = ${category.budget}</strong>
               <button name="Edit" onClick={onEdit}>✎</button>
               <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
@@ -37,10 +37,6 @@ export class CategoryDisplay extends Component {
           </p> */}
         </section>
         
-        <hr></hr>
-        {/* <h3>
-          <strong>Expenses:</strong>
-        </h3> */}
         <section>
           <Expenses categoryId={category.key}/>
         </section>

@@ -27,19 +27,20 @@ class Expenses extends Component {
     
     return (
       <div className={styles.expenses} >
-        <h3>Add Expense</h3>
         <section>
-          {/* <p>EXPENSE DISPLAY</p> */}
+          <h3>Add Expense</h3>
           <ExpenseForm onComplete={this.handleAddExpense} categoryId={categoryId}/>
         </section>
         {/* expenses && */}
+
         <section className="expenses-list">
+          <h3>Expenses:</h3>
+          
           {
             expenses.map(expense => {
               return <Expense key={expense.key} expense={expense}/>;
             })
           }
-          {/* <p>END CAT DISPLAY</p>         */}
         </section>
       </div>
     );

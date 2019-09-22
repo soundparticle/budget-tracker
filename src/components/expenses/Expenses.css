@@ -1,12 +1,7 @@
 
 :local(.expenses) {
-  display: block;
-  align-content: center;
-  border-color: green;
+  // border-color: green;
+  border-width: .5px;
   border-style: solid;
-
-  .expenses-list {
-    display: flex;
-    justify-content: center;
-  }
+  padding: 20px;
 }
