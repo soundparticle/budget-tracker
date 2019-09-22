@@ -22,7 +22,6 @@ class ExpenseForm extends Component {
   componentDidMount() {
     const { expense } = this.props;
     if(!expense) return null;
-
     this.setState(expense);
   }
   
@@ -48,7 +47,6 @@ class ExpenseForm extends Component {
 
     return (
       <form  onSubmit={this.handleSubmit}>
-        {/* <p>EXPENSE FORM</p> */}
         <label>
             Name:
           <input name="name" value={name} onChange={this.handleChange}/>
@@ -57,13 +55,10 @@ class ExpenseForm extends Component {
            Price:
           <input name="price" value={price} onChange={this.handleChange}/>
         </label>
-
         <span className={styles.formButtons}>
           <button type="submit">{ key ? 'Update' : 'Add' }</button>
           {key && <button type="button" onClick={onCancel}>Cancel</button>}
         </span>
-        <div >
-        </div>
       </form>
     );
   }

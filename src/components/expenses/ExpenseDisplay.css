@@ -2,8 +2,6 @@
   section {
     display: flex;
     justify-content: center;
-    // padding-top: 10px;
-    // padding-bottom: 10px;
     list-style-type: circle;
     color: rgb(198, 4, 4);
   }

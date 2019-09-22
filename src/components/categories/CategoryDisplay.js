@@ -21,9 +21,6 @@ export class CategoryDisplay extends Component {
     return (
       <div className={styles.categorydisplay}>
         <section className="category-list">
-          {/* <p style={{ color: 'blue' }}>
-            CAT DISPLAY
-          </p> */}
           <section>
             <li>
               <strong>{category.name} = ${category.budget}</strong>
@@ -31,10 +28,6 @@ export class CategoryDisplay extends Component {
               <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
             </li>
           </section>
-          {/* <br></br> */}
-          {/* <p>
-            END CAT DISPLAY
-          </p> */}
         </section>
         
         <section>

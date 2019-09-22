@@ -52,7 +52,6 @@ class CategoryForm extends Component {
           Budget:
           <input name="budget" value={budget} onChange={this.handleChange}/>
         </label>
-        
         <div>
           <span>
             <button type="submit">{ key ? 'Update' : 'Add' }</button>

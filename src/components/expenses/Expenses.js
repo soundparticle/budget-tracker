@@ -35,7 +35,6 @@ class Expenses extends Component {
 
         <section className="expenses-list">
           <h3>Expenses:</h3>
-          
           {
             expenses.map(expense => {
               return <Expense key={expense.key} expense={expense}/>;

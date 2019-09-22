@@ -6,10 +6,6 @@ import styles from './Header.css';
 
 class Header extends Component {
 
-  static propTypes = {
-    
-  };
-
   handleSpecial = event => {
     event.preventDefault();
     alert('that is a cool link!');
@@ -19,7 +15,7 @@ class Header extends Component {
 
     return (
       <div className={styles.header}>
-
+ 
         <section className="header-container">
           <div className="logo">
             <img src={logo}/>
@@ -36,7 +32,6 @@ class Header extends Component {
             </ul> 
           </nav>
         </section>
-
         <Error/>
       </div>
     );
