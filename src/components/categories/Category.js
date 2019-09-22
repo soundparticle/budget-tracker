@@ -36,7 +36,7 @@ export class Category extends Component {
     const { category } = this.props;
 
     return (
-      <li style={{ listStyleType: 'none' }}>
+      <li>
         {editing
           ? <CategoryForm
             category={category}

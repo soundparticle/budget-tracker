@@ -46,7 +46,6 @@ class Dashboard extends Component {
             </div>
           </section>
         }
-        <hr/>
       </div>
     );
   }

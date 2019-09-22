@@ -17,17 +17,14 @@ class ExpenseDisplay extends Component {
     const { expense, onEdit, removeExpense } = this.props;
 
     return (
-      <section className={styles.expensedisplay} styles={{ color: 'pink', borderStyle: 'solid', borderWidth: 3 }}>
-        <h3>
-          <strong>Expenses:<br></br> </strong>
-        </h3>
-        {/* <li>
-          {expense.name}<strong> = </strong>${expense.price}
-        </li> */}
-        <br></br>
-        <button name="Edit" onClick={onEdit}>✎</button>
-        <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
-        <hr/>
+      <section className={styles.expensedisplay}>
+        <section>
+          <li>
+            {expense.name} = ${expense.price}
+            <button name="Edit" onClick={onEdit}>✎</button>
+            <button name="Delete" onClick={() => removeExpense(expense)}>🗑</button>
+          </li>
+        </section>
       </section>
     );
   }

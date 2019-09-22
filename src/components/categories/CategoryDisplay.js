@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { remove } from './actions';
-// import Expenses from '../expenses/Expenses';
+import Expenses from '../expenses/Expenses';
 
 import styles from './CategoryDisplay.css';
 
@@ -25,7 +25,7 @@ export class CategoryDisplay extends Component {
             CAT DISPLAY
           </p> */}
           <section>
-            <li style={{ listStyleType: 'disc' }}>
+            <li>
               <strong>{category.name} = ${category.budget}</strong>
               <button name="Edit" onClick={onEdit}>✎</button>
               <button name="Remove" onClick={() => remove(category.key)}>🗑</button>
@@ -37,10 +37,9 @@ export class CategoryDisplay extends Component {
           </p> */}
         </section>
         
-        {/* <hr></hr> */}
-        {/* <section>
+        <section>
           <Expenses categoryId={category.key}/>
-        </section> */}
+        </section>
       </div>
     );
   }

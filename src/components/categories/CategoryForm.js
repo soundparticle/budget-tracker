@@ -54,10 +54,10 @@ class CategoryForm extends Component {
         </label>
         
         <div>
-          <p>
+          <span>
             <button type="submit">{ key ? 'Update' : 'Add' }</button>
             {key && <button type="button" onClick={onCancel}>Cancel</button>}
-          </p>
+          </span>
         </div>
       </form>
     );
